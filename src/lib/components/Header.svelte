@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
-	import { locales, getLocale } from '$lib/paraglide/runtime.js';
+	import { locales, getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 	import { page } from '$app/stores';
 
 	let mobileMenuOpen = $state(false);
@@ -11,13 +11,6 @@
 		fr: 'FR',
 		en: 'EN'
 	};
-
-	function getLocalizedUrl(lang: string, currentPath: string) {
-		// Remove current language prefix if it exists
-		const pathWithoutLang = currentPath.replace(/^\/(nl|fr|en)(\/|$)/, '/');
-		// Add new language prefix
-		return lang === 'nl' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
-	}
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
@@ -75,14 +68,15 @@
 			<a href="/" onclick={closeMobileMenu}>{m.provinces()}</a>
 			<div class="language-switcher">
 				<span class="lang-label">Language:</span>
-				{#each locales as lang}
+				{#each locales as locale}
 					<a
-						href={getLocalizedUrl(lang, $page.url.pathname)}
+						href={localizeHref($page.url.pathname, {locale} )}
 						class="lang-link"
-						class:active={lang === getLocale()}
+						class:active={locale === getLocale()}
 						onclick={closeMobileMenu}
+                        data-sveltekit-reload
 					>
-						{languageNames[lang]}
+						{languageNames[locale]}
 					</a>
 				{/each}
 			</div>
