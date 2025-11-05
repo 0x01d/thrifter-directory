@@ -66,6 +66,7 @@
 
 		<nav class="main-nav" class:open={mobileMenuOpen}>
 			<a href={localizeHref('/', getLocale())} onclick={closeMobileMenu}>{m.provinces()}</a>
+			<a href={localizeHref('/cities', getLocale())} onclick={closeMobileMenu}>{m.cities()}</a>
 			<div class="language-switcher">
 				<span class="lang-label">Language:</span>
 				{#each locales as locale}
