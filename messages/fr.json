@@ -1,4 +1,21 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from fr!"
+	"site_title": "Thrifter.be - Magasins d'occasion en Belgique",
+	"site_description": "Trouvez tous les ressourceries et magasins d'occasion en Belgique",
+	"provinces": "Provinces",
+	"cities": "Villes",
+	"stores": "Magasins",
+	"all_stores": "Tous les magasins",
+	"store_count": "{count} magasins",
+	"city_count": "{count} villes",
+	"contact_info": "Coordonnées",
+	"address": "Adresse",
+	"phone": "Téléphone",
+	"website": "Site web",
+	"email": "E-mail",
+	"opening_hours": "Horaires d'ouverture",
+	"description": "Description",
+	"specialties": "Spécialités",
+	"view_on_maps": "Voir sur Google Maps",
+	"thrift_stores_in": "Magasins d'occasion à {location}"
 }
