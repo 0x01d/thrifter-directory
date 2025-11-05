@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let { data }: { data: PageData } = $props();
 	const { store } = data;
@@ -15,7 +16,7 @@
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">Home</a> /
+		<a href="/">{m.home()}</a> /
 		<a href="/{provinceSlug}">{store.province}</a> /
 		<a href="/{provinceSlug}/{citySlug}">{store.city}</a> /
 		<span>{store.name}</span>
@@ -31,16 +32,16 @@
 		</header>
 
 		<section class="info-section">
-			<h2>Contact Information</h2>
+			<h2>{m.contact_info()}</h2>
 			<div class="info-grid">
 				<div class="info-item">
-					<strong>📍 Address</strong>
+					<strong>📍 {m.address()}</strong>
 					<p>{store.address}</p>
 				</div>
 
 				{#if store.phone}
 					<div class="info-item">
-						<strong>📞 Phone</strong>
+						<strong>📞 {m.phone()}</strong>
 						<p>
 							<a href="tel:{store.phone.replace(/\s+/g, '')}">{store.phone}</a>
 						</p>
@@ -49,7 +50,7 @@
 
 				{#if store.website}
 					<div class="info-item">
-						<strong>🌐 Website</strong>
+						<strong>🌐 {m.website()}</strong>
 						<p>
 							<a
 								href="https://{store.website}"
@@ -62,7 +63,7 @@
 
 				{#if store.email}
 					<div class="info-item">
-						<strong>✉️ Email</strong>
+						<strong>✉️ {m.email()}</strong>
 						<p><a href="mailto:{store.email}">{store.email}</a></p>
 					</div>
 				{/if}
@@ -71,21 +72,21 @@
 
 		{#if store.description}
 			<section class="description-section">
-				<h2>Description</h2>
+				<h2>{m.description()}</h2>
 				<p>{store.description}</p>
 			</section>
 		{/if}
 
 		{#if store.openingHours}
 			<section class="hours-section">
-				<h2>Opening Hours</h2>
+				<h2>{m.opening_hours()}</h2>
 				<p>{store.openingHours}</p>
 			</section>
 		{/if}
 
 		{#if store.specialties && store.specialties.length > 0}
 			<section class="specialties-section">
-				<h2>Specialties</h2>
+				<h2>{m.specialties()}</h2>
 				<div class="tags">
 					{#each store.specialties as specialty}
 						<span class="tag">{specialty}</span>
@@ -101,7 +102,7 @@
 				rel="noopener noreferrer"
 				class="btn btn-primary"
 			>
-				View on Google Maps
+				{m.view_on_maps()}
 			</a>
 		</section>
 	</article>

@@ -1,7 +1,24 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import * as m from '$lib/paraglide/messages.js';
+	import { languageTag, availableLanguageTags } from '$lib/paraglide/runtime.js';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
+
+	// Language display names
+	const languageNames: Record<string, string> = {
+		nl: 'NL',
+		fr: 'FR',
+		en: 'EN'
+	};
+
+	function getLocalizedUrl(lang: string, currentPath: string) {
+		// Remove current language prefix if it exists
+		const pathWithoutLang = currentPath.replace(/^\/(nl|fr|en)(\/|$)/, '/');
+		// Add new language prefix
+		return lang === 'nl' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
+	}
 </script>
 
 <svelte:head>
@@ -17,7 +34,18 @@
 				<h1>Thrifter.be</h1>
 			</a>
 			<nav class="main-nav">
-				<a href="/">Provincies</a>
+				<a href="/">{m.provinces()}</a>
+				<div class="language-switcher">
+					{#each availableLanguageTags as lang}
+						<a
+							href={getLocalizedUrl(lang, $page.url.pathname)}
+							class="lang-link"
+							class:active={lang === languageTag()}
+						>
+							{languageNames[lang]}
+						</a>
+					{/each}
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -28,7 +56,7 @@
 
 	<footer class="site-footer">
 		<div class="footer-container">
-			<p>&copy; 2024 Thrifter.be - Tweedehandswinkels en Kringwinkels in België</p>
+			<p>&copy; 2024 {m.footer_text()}</p>
 		</div>
 	</footer>
 </div>
@@ -89,17 +117,45 @@
 	.main-nav {
 		display: flex;
 		gap: 1.5rem;
+		align-items: center;
 	}
 
-	.main-nav a {
+	.main-nav > a {
 		color: white;
 		text-decoration: none;
 		font-weight: 500;
 		transition: color 0.2s;
 	}
 
-	.main-nav a:hover {
+	.main-nav > a:hover {
 		color: #3498db;
+	}
+
+	.language-switcher {
+		display: flex;
+		gap: 0.5rem;
+		padding-left: 1rem;
+		border-left: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.lang-link {
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+		font-weight: 500;
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		transition: all 0.2s;
+		font-size: 0.9rem;
+	}
+
+	.lang-link:hover {
+		color: white;
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.lang-link.active {
+		color: white;
+		background: #3498db;
 	}
 
 	.site-main {

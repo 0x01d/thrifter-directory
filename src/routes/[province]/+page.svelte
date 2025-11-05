@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let { data }: { data: PageData } = $props();
 
@@ -14,38 +15,37 @@
 </script>
 
 <svelte:head>
-	<title>{data.province.name} - Tweedehandswinkels - Thrifter.be</title>
+	<title>{data.province.name} - {m.thrift_stores_in({ location: 'België' })} - Thrifter.be</title>
 	<meta
 		name="description"
-		content="Vind alle {data.stores.length} kringwinkels en tweedehandswinkels in {data.province
-			.name}"
+		content={m.find_all_stores_in({ count: data.stores.length, location: data.province.name })}
 	/>
 </svelte:head>
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">Home</a> / <span>{data.province.name}</span>
+		<a href="/">{m.home()}</a> / <span>{data.province.name}</span>
 	</nav>
 
 	<h1>{data.province.name}</h1>
 	<p class="stats">
-		{data.stores.length} tweedehandswinkels in {data.cities.length} steden
+		{m.stores_in_cities({ storeCount: data.stores.length, cityCount: data.cities.length })}
 	</p>
 
 	<section class="cities">
-		<h2>Steden</h2>
+		<h2>{m.cities()}</h2>
 		<div class="city-grid">
 			{#each data.cities as city}
 				<a href="/{data.province.slug}/{city.slug}" class="city-card">
 					<h3>{city.name}</h3>
-					<p>{city.storeCount} winkels</p>
+					<p>{m.store_count({ count: city.storeCount })}</p>
 				</a>
 			{/each}
 		</div>
 	</section>
 
 	<section class="stores">
-		<h2>Alle winkels</h2>
+		<h2>{m.all_stores()}</h2>
 		{#each Array.from(storesByCity.entries()) as [cityName, cityStores]}
 			<div class="city-section">
 				<h3>
