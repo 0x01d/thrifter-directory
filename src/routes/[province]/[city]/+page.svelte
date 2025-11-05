@@ -1,0 +1,146 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
+</script>
+
+<svelte:head>
+	<title
+		>{data.city.name}, {data.province.name} - Tweedehandswinkels - Thrifter.be</title
+	>
+	<meta
+		name="description"
+		content="Vind alle {data.stores.length} kringwinkels en tweedehandswinkels in {data.city
+			.name}, {data.province.name}"
+	/>
+</svelte:head>
+
+<div class="container">
+	<nav class="breadcrumb">
+		<a href="/">Home</a> /
+		<a href="/{data.province.slug}">{data.province.name}</a> /
+		<span>{data.city.name}</span>
+	</nav>
+
+	<h1>{data.city.name}</h1>
+	<p class="stats">{data.stores.length} tweedehandswinkels</p>
+
+	<section class="stores">
+		<div class="store-list">
+			{#each data.stores as store}
+				<a
+					href="/{data.province.slug}/{data.city.slug}/{store.slug}"
+					class="store-card"
+				>
+					<h3>{store.name}</h3>
+					<p class="category">{store.category}</p>
+					<p class="address">{store.address}</p>
+					<div class="info">
+						{#if store.phone}
+							<p class="phone">📞 {store.phone}</p>
+						{/if}
+						{#if store.website}
+							<p class="website">🌐 {store.website}</p>
+						{/if}
+					</div>
+					{#if store.stars}
+						<p class="rating">⭐ {store.stars} ({store.review_count})</p>
+					{/if}
+				</a>
+			{/each}
+		</div>
+	</section>
+</div>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.breadcrumb {
+		margin-bottom: 1rem;
+		color: #7f8c8d;
+	}
+
+	.breadcrumb a {
+		color: #3498db;
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+		color: #2c3e50;
+	}
+
+	.stats {
+		font-size: 1.1rem;
+		color: #7f8c8d;
+		margin-bottom: 3rem;
+	}
+
+	.store-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.store-card {
+		background: #fff;
+		border: 2px solid #ecf0f1;
+		border-radius: 8px;
+		padding: 1.5rem;
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.2s;
+	}
+
+	.store-card:hover {
+		border-color: #3498db;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		transform: translateY(-2px);
+	}
+
+	.store-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 0.5rem;
+		color: #2c3e50;
+	}
+
+	.category {
+		font-size: 0.9rem;
+		color: #3498db;
+		margin-bottom: 0.75rem;
+		font-weight: 500;
+	}
+
+	.address {
+		font-size: 0.95rem;
+		color: #7f8c8d;
+		margin-bottom: 0.75rem;
+	}
+
+	.info {
+		margin: 0.75rem 0;
+	}
+
+	.phone,
+	.website {
+		font-size: 0.9rem;
+		color: #7f8c8d;
+		margin: 0.25rem 0;
+	}
+
+	.rating {
+		font-size: 0.95rem;
+		color: #f39c12;
+		margin-top: 0.75rem;
+		font-weight: 500;
+	}
+</style>

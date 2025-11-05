@@ -1,4 +1,21 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from nl!"
+	"site_title": "Thrifter.be - Tweedehandswinkels in België",
+	"site_description": "Vind alle kringwinkels en tweedehandswinkels in België",
+	"provinces": "Provincies",
+	"cities": "Steden",
+	"stores": "Winkels",
+	"all_stores": "Alle winkels",
+	"store_count": "{count} winkels",
+	"city_count": "{count} steden",
+	"contact_info": "Contactgegevens",
+	"address": "Adres",
+	"phone": "Telefoon",
+	"website": "Website",
+	"email": "E-mail",
+	"opening_hours": "Openingsuren",
+	"description": "Beschrijving",
+	"specialties": "Specialiteiten",
+	"view_on_maps": "Bekijk op Google Maps",
+	"thrift_stores_in": "Tweedehandswinkels in {location}"
 }

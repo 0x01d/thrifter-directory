@@ -1,4 +1,21 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"site_title": "Thrifter.be - Thrift Stores in Belgium",
+	"site_description": "Find all thrift stores and second-hand shops in Belgium",
+	"provinces": "Provinces",
+	"cities": "Cities",
+	"stores": "Stores",
+	"all_stores": "All stores",
+	"store_count": "{count} stores",
+	"city_count": "{count} cities",
+	"contact_info": "Contact Information",
+	"address": "Address",
+	"phone": "Phone",
+	"website": "Website",
+	"email": "Email",
+	"opening_hours": "Opening Hours",
+	"description": "Description",
+	"specialties": "Specialties",
+	"view_on_maps": "View on Google Maps",
+	"thrift_stores_in": "Thrift stores in {location}"
 }
