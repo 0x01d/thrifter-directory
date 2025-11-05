@@ -1,7 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import * as m from '$lib/paraglide/messages.js';
-	import { locales, getLocale } from '$lib/paraglide/runtime.js';
+	import { locales, getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 	import { page } from '$app/stores';
 
 	let { children } = $props();
@@ -12,13 +12,6 @@
 		fr: 'FR',
 		en: 'EN'
 	};
-
-	function getLocalizedUrl(lang: string, currentPath: string) {
-		// Remove current language prefix if it exists
-		const pathWithoutLang = currentPath.replace(/^\/(nl|fr|en)(\/|$)/, '/');
-		// Add new language prefix
-		return lang === 'nl' ? pathWithoutLang : `/${lang}${pathWithoutLang}`;
-	}
 </script>
 
 <svelte:head>
@@ -38,7 +31,7 @@
 				<div class="language-switcher">
 					{#each locales as lang}
 						<a
-							href={getLocalizedUrl(lang, $page.url.pathname)}
+							href={localizeHref($page.url.pathname, { locale: lang })}
 							class="lang-link"
 							class:active={lang === getLocale()}
 						>
