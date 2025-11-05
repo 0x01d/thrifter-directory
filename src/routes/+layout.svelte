@@ -1,7 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import * as m from '$lib/paraglide/messages.js';
-	import { languageTag, availableLanguageTags } from '$lib/paraglide/runtime.js';
+	import { locales, getLocale} from '$lib/paraglide/runtime.js';
 	import { page } from '$app/stores';
 
 	let { children } = $props();
@@ -36,11 +36,11 @@
 			<nav class="main-nav">
 				<a href="/">{m.provinces()}</a>
 				<div class="language-switcher">
-					{#each availableLanguageTags as lang}
+					{#each locales as lang}
 						<a
 							href={getLocalizedUrl(lang, $page.url.pathname)}
 							class="lang-link"
-							class:active={lang === languageTag()}
+							class:active={lang === getLocale()}
 						>
 							{languageNames[lang]}
 						</a>
