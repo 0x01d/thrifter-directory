@@ -16,6 +16,7 @@ export const GET: RequestHandler = async () => {
 	for (const locale of locales) {
 		urls.push(`${baseUrl}/${locale}`);
 		urls.push(`${baseUrl}/${locale}/cities`);
+		urls.push(`${baseUrl}/${locale}/categorieen`);
 	}
 
 	// Add province pages for each locale
@@ -32,6 +33,41 @@ export const GET: RequestHandler = async () => {
 		}
 	}
 
+	// Add category pages for each locale
+	for (const category of data.categories) {
+		for (const locale of locales) {
+			urls.push(`${baseUrl}/${locale}/categorieen/${category.slug}`);
+		}
+	}
+
+	// Add province + category pages for each locale
+	for (const province of data.provinces) {
+		for (const category of data.categories) {
+			const key = `${category.slug}/${province.slug}`;
+			const stores = data.storesByCategoryAndProvince.get(key);
+			if (stores && stores.length > 0) {
+				for (const locale of locales) {
+					urls.push(`${baseUrl}/${locale}/${province.slug}/categorieen/${category.slug}`);
+				}
+			}
+		}
+	}
+
+	// Add city + category pages for each locale
+	for (const city of data.cities) {
+		for (const category of data.categories) {
+			const key = `${category.slug}/${city.provinceSlug}/${city.slug}`;
+			const stores = data.storesByCategoryAndCity.get(key);
+			if (stores && stores.length > 0) {
+				for (const locale of locales) {
+					urls.push(
+						`${baseUrl}/${locale}/${city.provinceSlug}/${city.slug}/categorieen/${category.slug}`
+					);
+				}
+			}
+		}
+	}
+
 	// Add store pages for each locale
 	for (const store of data.stores) {
 		const provinceSlug = store.slug.split('-').slice(0, -2).join('-');
@@ -40,9 +76,10 @@ export const GET: RequestHandler = async () => {
 		// Use the actual province and city slugs from the store data
 		for (const locale of locales) {
 			// Find the correct province and city slugs
-			const city = data.cities.find(c =>
-				c.name.toLowerCase() === store.city.toLowerCase() &&
-				c.province.toLowerCase() === store.province.toLowerCase()
+			const city = data.cities.find(
+				(c) =>
+					c.name.toLowerCase() === store.city.toLowerCase() &&
+					c.province.toLowerCase() === store.province.toLowerCase()
 			);
 
 			if (city) {

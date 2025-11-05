@@ -55,12 +55,27 @@ export interface City {
 }
 
 /**
+ * Category data structure
+ */
+export interface Category {
+	slug: string;
+	nameNL: string;
+	nameFR: string;
+	nameEN: string;
+	storeCount: number;
+}
+
+/**
  * Aggregated directory data
  */
 export interface DirectoryData {
 	stores: ThriftStoreWithSlug[];
 	provinces: Province[];
 	cities: City[];
+	categories: Category[];
 	storesByProvince: Map<string, ThriftStoreWithSlug[]>;
 	storesByCity: Map<string, ThriftStoreWithSlug[]>;
+	storesByCategory: Map<string, ThriftStoreWithSlug[]>;
+	storesByCategoryAndProvince: Map<string, ThriftStoreWithSlug[]>;
+	storesByCategoryAndCity: Map<string, ThriftStoreWithSlug[]>;
 }

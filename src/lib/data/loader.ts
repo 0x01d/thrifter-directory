@@ -5,9 +5,11 @@ import type {
 	ThriftStoreWithSlug,
 	Province,
 	City,
+	Category,
 	DirectoryData
 } from '$lib/types/thrift-store';
 import { slugify, generateStoreSlug } from '$lib/utils/slug';
+import { getAllCategories, storeMatchesCategory } from './categories';
 
 const DATA_DIR = 'data/stores';
 
@@ -44,6 +46,12 @@ export async function loadDirectoryData(): Promise<DirectoryData> {
 	// Group stores by province
 	const storesByProvince = new Map<string, ThriftStoreWithSlug[]>();
 	const storesByCity = new Map<string, ThriftStoreWithSlug[]>();
+	const storesByCategory = new Map<string, ThriftStoreWithSlug[]>();
+	const storesByCategoryAndProvince = new Map<string, ThriftStoreWithSlug[]>();
+	const storesByCategoryAndCity = new Map<string, ThriftStoreWithSlug[]>();
+
+	// Get all category configs
+	const categoryConfigs = getAllCategories();
 
 	for (const store of stores) {
 		// By province
@@ -59,6 +67,31 @@ export async function loadDirectoryData(): Promise<DirectoryData> {
 			storesByCity.set(cityKey, []);
 		}
 		storesByCity.get(cityKey)!.push(store);
+
+		// By category
+		for (const categoryConfig of categoryConfigs) {
+			if (storeMatchesCategory(store.category, categoryConfig.slug)) {
+				// Category only
+				if (!storesByCategory.has(categoryConfig.slug)) {
+					storesByCategory.set(categoryConfig.slug, []);
+				}
+				storesByCategory.get(categoryConfig.slug)!.push(store);
+
+				// Category + Province
+				const categoryProvinceKey = `${categoryConfig.slug}/${provinceKey}`;
+				if (!storesByCategoryAndProvince.has(categoryProvinceKey)) {
+					storesByCategoryAndProvince.set(categoryProvinceKey, []);
+				}
+				storesByCategoryAndProvince.get(categoryProvinceKey)!.push(store);
+
+				// Category + City
+				const categoryCityKey = `${categoryConfig.slug}/${cityKey}`;
+				if (!storesByCategoryAndCity.has(categoryCityKey)) {
+					storesByCategoryAndCity.set(categoryCityKey, []);
+				}
+				storesByCategoryAndCity.get(categoryCityKey)!.push(store);
+			}
+		}
 	}
 
 	// Build provinces list
@@ -105,12 +138,25 @@ export async function loadDirectoryData(): Promise<DirectoryData> {
 		};
 	});
 
+	// Build categories list
+	const categories: Category[] = categoryConfigs.map((config) => ({
+		slug: config.slug,
+		nameNL: config.nameNL,
+		nameFR: config.nameFR,
+		nameEN: config.nameEN,
+		storeCount: storesByCategory.get(config.slug)?.length || 0
+	}));
+
 	return {
 		stores,
 		provinces: provinces.sort((a, b) => a.name.localeCompare(b.name)),
 		cities: cities.sort((a, b) => a.name.localeCompare(b.name)),
+		categories: categories.filter((c) => c.storeCount > 0),
 		storesByProvince,
-		storesByCity
+		storesByCity,
+		storesByCategory,
+		storesByCategoryAndProvince,
+		storesByCategoryAndCity
 	};
 }
 
@@ -168,4 +214,47 @@ export async function getCitiesForProvince(provinceSlug: string): Promise<City[]
 export async function getCities(): Promise<City[]> {
 	const data = await loadDirectoryData();
 	return data.cities;
+}
+
+/**
+ * Get all categories
+ */
+export async function getCategories(): Promise<Category[]> {
+	const data = await loadDirectoryData();
+	return data.categories;
+}
+
+/**
+ * Get all stores for a specific category
+ */
+export async function getStoresByCategory(
+	categorySlug: string
+): Promise<ThriftStoreWithSlug[]> {
+	const data = await loadDirectoryData();
+	return data.storesByCategory.get(categorySlug) || [];
+}
+
+/**
+ * Get all stores for a specific category in a province
+ */
+export async function getStoresByCategoryAndProvince(
+	categorySlug: string,
+	provinceSlug: string
+): Promise<ThriftStoreWithSlug[]> {
+	const data = await loadDirectoryData();
+	const key = `${categorySlug}/${provinceSlug}`;
+	return data.storesByCategoryAndProvince.get(key) || [];
+}
+
+/**
+ * Get all stores for a specific category in a city
+ */
+export async function getStoresByCategoryAndCity(
+	categorySlug: string,
+	provinceSlug: string,
+	citySlug: string
+): Promise<ThriftStoreWithSlug[]> {
+	const data = await loadDirectoryData();
+	const key = `${categorySlug}/${provinceSlug}/${citySlug}`;
+	return data.storesByCategoryAndCity.get(key) || [];
 }
