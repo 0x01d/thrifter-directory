@@ -16,7 +16,7 @@ export const GET: RequestHandler = async () => {
 	for (const locale of locales) {
 		urls.push(`${baseUrl}/${locale}`);
 		urls.push(`${baseUrl}/${locale}/cities`);
-		urls.push(`${baseUrl}/${locale}/categorieen`);
+		urls.push(`${baseUrl}/${locale}/categories`);
 	}
 
 	// Add province pages for each locale
@@ -36,7 +36,7 @@ export const GET: RequestHandler = async () => {
 	// Add category pages for each locale
 	for (const category of data.categories) {
 		for (const locale of locales) {
-			urls.push(`${baseUrl}/${locale}/categorieen/${category.slug}`);
+			urls.push(`${baseUrl}/${locale}/categories/${category.slug}`);
 		}
 	}
 
@@ -47,7 +47,7 @@ export const GET: RequestHandler = async () => {
 			const stores = data.storesByCategoryAndProvince.get(key);
 			if (stores && stores.length > 0) {
 				for (const locale of locales) {
-					urls.push(`${baseUrl}/${locale}/${province.slug}/categorieen/${category.slug}`);
+					urls.push(`${baseUrl}/${locale}/${province.slug}/categories/${category.slug}`);
 				}
 			}
 		}
@@ -61,7 +61,7 @@ export const GET: RequestHandler = async () => {
 			if (stores && stores.length > 0) {
 				for (const locale of locales) {
 					urls.push(
-						`${baseUrl}/${locale}/${city.provinceSlug}/${city.slug}/categorieen/${category.slug}`
+						`${baseUrl}/${locale}/${city.provinceSlug}/${city.slug}/categories/${category.slug}`
 					);
 				}
 			}
