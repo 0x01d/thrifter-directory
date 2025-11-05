@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -18,7 +19,7 @@
 		<h2>{m.provinces()}</h2>
 		<div class="province-grid">
 			{#each data.provinces as province}
-				<a href="/{province.slug}" class="province-card">
+				<a href={localizeHref(`/${province.slug}`, getLocale())} class="province-card">
 					<h3>{province.name}</h3>
 					<p>{m.store_count({ count: province.storeCount })}</p>
 					<p class="cities-count">{m.city_count({ count: province.cities.length })}</p>

@@ -1,12 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 
 	let { data }: { data: PageData } = $props();
-	const { store } = data;
-
-	const provinceSlug = store.province.toLowerCase().replace(/\s+/g, '-');
-	const citySlug = store.city.toLowerCase().replace(/\s+/g, '-');
+	const { store, provinceSlug, citySlug } = data;
 </script>
 
 <svelte:head>
@@ -16,9 +14,9 @@
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">{m.home()}</a> /
-		<a href="/{provinceSlug}">{store.province}</a> /
-		<a href="/{provinceSlug}/{citySlug}">{store.city}</a> /
+		<a href={localizeHref('/', getLocale())}>{m.home()}</a> /
+		<a href={localizeHref(`/${provinceSlug}`, getLocale())}>{store.province}</a> /
+		<a href={localizeHref(`/${provinceSlug}/${citySlug}`, getLocale())}>{store.city}</a> /
 		<span>{store.name}</span>
 	</nav>
 
