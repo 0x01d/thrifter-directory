@@ -1,29 +1,32 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import * as m from '$lib/paraglide/messages.js';
 
 	let { data }: { data: PageData } = $props();
 </script>
 
 <svelte:head>
 	<title
-		>{data.city.name}, {data.province.name} - Tweedehandswinkels - Thrifter.be</title
+		>{data.city.name}, {data.province.name} - {m.thrift_stores_in({ location: 'België' })} - Thrifter.be</title
 	>
 	<meta
 		name="description"
-		content="Vind alle {data.stores.length} kringwinkels en tweedehandswinkels in {data.city
-			.name}, {data.province.name}"
+		content={m.find_all_stores_in({
+			count: data.stores.length,
+			location: `${data.city.name}, ${data.province.name}`
+		})}
 	/>
 </svelte:head>
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">Home</a> /
+		<a href="/">{m.home()}</a> /
 		<a href="/{data.province.slug}">{data.province.name}</a> /
 		<span>{data.city.name}</span>
 	</nav>
 
 	<h1>{data.city.name}</h1>
-	<p class="stats">{data.stores.length} tweedehandswinkels</p>
+	<p class="stats">{m.stores_count_only({ count: data.stores.length })}</p>
 
 	<section class="stores">
 		<div class="store-list">
