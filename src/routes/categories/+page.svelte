@@ -8,7 +8,7 @@
 
 	const locale = getLocale();
 	const baseUrl = 'https://thrifter.be';
-	const currentUrl = `${baseUrl}${localizeHref('/categorieen', locale)}`;
+	const currentUrl = `${baseUrl}${localizeHref('/categories', locale)}`;
 	const pageTitle = 'Categorieën - Tweedehands & Kringwinkels - Thrifter.be';
 	const pageDescription =
 		'Browse alle categorieën tweedehands spullen: vintage kleding, designer merken, meubels, boeken, elektronica en speelgoed bij kringwinkels in België.';
@@ -54,7 +54,7 @@
 	<section class="categories">
 		<div class="category-grid">
 			{#each data.categories as category}
-				<a href={localizeHref(`/categorieen/${category.slug}`, getLocale())} class="category-card">
+				<a href={localizeHref(`/categories/${category.slug}`, getLocale())} class="category-card">
 					<div class="category-header">
 						<h3>{getCategoryName(category)}</h3>
 					</div>

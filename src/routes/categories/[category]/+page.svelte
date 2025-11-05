@@ -8,7 +8,7 @@
 
 	const locale = getLocale();
 	const baseUrl = 'https://thrifter.be';
-	const currentUrl = `${baseUrl}${localizeHref(`/categorieen/${data.category.slug}`, locale)}`;
+	const currentUrl = `${baseUrl}${localizeHref(`/categories/${data.category.slug}`, locale)}`;
 
 	// Get localized content
 	function getCategoryName(): string {
@@ -61,7 +61,7 @@
 <BreadcrumbSchema
 	items={[
 		{ name: 'Home', url: `${baseUrl}${localizeHref('/', locale)}` },
-		{ name: 'Categorieën', url: `${baseUrl}${localizeHref('/categorieen', locale)}` },
+		{ name: 'Categorieën', url: `${baseUrl}${localizeHref('/categories', locale)}` },
 		{ name: categoryName, url: currentUrl }
 	]}
 />
@@ -69,7 +69,7 @@
 <div class="container">
 	<nav class="breadcrumb">
 		<a href={localizeHref('/', getLocale())}>Home</a> /
-		<a href={localizeHref('/categorieen', getLocale())}>Categorieën</a> /
+		<a href={localizeHref('/categories', getLocale())}>Categorieën</a> /
 		<span>{categoryName}</span>
 	</nav>
 

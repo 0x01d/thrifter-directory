@@ -12,13 +12,20 @@ import { slugify, generateStoreSlug } from '$lib/utils/slug';
 import { getAllCategories, storeMatchesCategory } from './categories';
 
 const DATA_DIR = 'data/stores';
+const DEV_FILE_LIMIT = 5;
 
 /**
  * Load all thrift stores from JSON files
  */
 export async function loadAllStores(): Promise<ThriftStoreWithSlug[]> {
 	const files = await readdir(DATA_DIR);
-	const jsonFiles = files.filter((file) => file.endsWith('.json'));
+	let jsonFiles = files.filter((file) => file.endsWith('.json'));
+
+	// In dev mode, only load first 5 files for faster builds
+	if (process.env.BUILD_DEV === 'true') {
+		jsonFiles = jsonFiles.slice(0, DEV_FILE_LIMIT);
+		console.log(`[DEV MODE] Loading only ${jsonFiles.length} data files for faster build`);
+	}
 
 	const allStores: ThriftStoreWithSlug[] = [];
 

@@ -8,7 +8,7 @@
 
 	const locale = getLocale();
 	const baseUrl = 'https://thrifter.be';
-	const currentUrl = `${baseUrl}${localizeHref(`/${data.province.slug}/categorieen/${data.category.slug}`, locale)}`;
+	const currentUrl = `${baseUrl}${localizeHref(`/${data.province.slug}/${data.city.slug}/categories/${data.category.slug}`, locale)}`;
 
 	// Get localized content
 	function getCategoryName(): string {
@@ -25,23 +25,8 @@
 
 	const categoryName = getCategoryName();
 	const categoryDescription = getCategoryDescription();
-	const pageTitle = `${categoryName} in ${data.province.name} - Kringwinkels - Thrifter.be`;
-	const pageDescription = `${categoryDescription} Vind ${data.stores.length} ${categoryName.toLowerCase()} winkels in ${data.province.name}, België.`;
-
-	// Group stores by city
-	const storesByCity = data.stores.reduce(
-		(acc, store) => {
-			const city = store.city;
-			if (!acc[city]) {
-				acc[city] = [];
-			}
-			acc[city].push(store);
-			return acc;
-		},
-		{} as Record<string, typeof data.stores>
-	);
-
-	const cities = Object.keys(storesByCity).sort();
+	const pageTitle = `${categoryName} in ${data.city.name} - Kringwinkels - Thrifter.be`;
+	const pageDescription = `Vind ${data.stores.length} ${categoryName.toLowerCase()} winkels in ${data.city.name}, ${data.province.name}. ${categoryDescription}`;
 </script>
 
 <svelte:head>
@@ -49,7 +34,7 @@
 	<meta name="description" content={pageDescription} />
 	<meta
 		name="keywords"
-		content="{data.category.keywords.join(', ')}, {data.province.name}, kringwinkel {data.province.name}"
+		content="{data.category.keywords.join(', ')}, {data.city.name}, {data.province.name}, kringwinkel {data.city.name}"
 	/>
 </svelte:head>
 
@@ -65,7 +50,8 @@
 	items={[
 		{ name: 'Home', url: `${baseUrl}${localizeHref('/', locale)}` },
 		{ name: data.province.name, url: `${baseUrl}${localizeHref(`/${data.province.slug}`, locale)}` },
-		{ name: 'Categorieën', url: `${baseUrl}${localizeHref('/categorieen', locale)}` },
+		{ name: data.city.name, url: `${baseUrl}${localizeHref(`/${data.province.slug}/${data.city.slug}`, locale)}` },
+		{ name: 'Categorieën', url: `${baseUrl}${localizeHref('/categories', locale)}` },
 		{ name: categoryName, url: currentUrl }
 	]}
 />
@@ -74,62 +60,74 @@
 	<nav class="breadcrumb">
 		<a href={localizeHref('/', getLocale())}>Home</a> /
 		<a href={localizeHref(`/${data.province.slug}`, getLocale())}>{data.province.name}</a> /
-		<a href={localizeHref('/categorieen', getLocale())}>Categorieën</a> /
+		<a href={localizeHref(`/${data.province.slug}/${data.city.slug}`, getLocale())}
+			>{data.city.name}</a
+		>
+		/
+		<a href={localizeHref('/categories', getLocale())}>Categorieën</a> /
 		<span>{categoryName}</span>
 	</nav>
 
 	<div class="header">
-		<h1>{data.category.icon} {categoryName} in {data.province.name}</h1>
+		<h1>{data.category.icon} {categoryName} in {data.city.name}</h1>
 		<p class="description">{categoryDescription}</p>
-		<p class="stats">{data.stores.length} winkels gevonden in {data.province.name}</p>
+		<p class="stats">
+			{data.stores.length}
+			{data.stores.length === 1 ? 'winkel gevonden' : 'winkels gevonden'} in {data.city.name}
+		</p>
 	</div>
 
-	<section class="stores-by-city">
-		{#each cities as city}
-			<div class="city-section">
-				<h2>{city}</h2>
-				<div class="store-list">
-					{#each storesByCity[city] as store}
-						<a
-							href={store.google_maps_url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="store-card"
-						>
-							<h3>{store.name}</h3>
-							<p class="category">{store.category}</p>
-							<p class="address">{store.address}</p>
-							<div class="info">
-								{#if store.phone}
-									<p class="phone">📞 {store.phone}</p>
-								{/if}
-								{#if store.website}
-									<p class="website">🌐 {store.website}</p>
-								{/if}
-							</div>
-							{#if store.stars}
-								<p class="rating">⭐ {store.stars} ({store.review_count})</p>
-							{/if}
-						</a>
-					{/each}
-				</div>
-			</div>
-		{/each}
+	<section class="stores">
+		<div class="store-list">
+			{#each data.stores as store}
+				<a
+					href={store.google_maps_url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="store-card"
+				>
+					<h3>{store.name}</h3>
+					<p class="category">{store.category}</p>
+					<p class="address">{store.address}</p>
+					<div class="info">
+						{#if store.phone}
+							<p class="phone">📞 {store.phone}</p>
+						{/if}
+						{#if store.website}
+							<p class="website">🌐 {store.website}</p>
+						{/if}
+					</div>
+					{#if store.stars}
+						<p class="rating">⭐ {store.stars} ({store.review_count})</p>
+					{/if}
+				</a>
+			{/each}
+		</div>
 	</section>
 
 	<section class="seo-content">
-		<h2>{categoryName} in {data.province.name}</h2>
+		<h2>{categoryName} in {data.city.name}, {data.province.name}</h2>
 		<p>
-			Op zoek naar {categoryName.toLowerCase()} in {data.province.name}? We hebben {data.stores.length}
-			winkels gevonden waar je {categoryName.toLowerCase()} kunt vinden. {categoryDescription}
+			Op zoek naar {categoryName.toLowerCase()} in {data.city.name}? We hebben {data.stores.length}
+			{data.stores.length === 1 ? 'winkel' : 'winkels'} gevonden waar je {categoryName.toLowerCase()}
+			kunt vinden. {categoryDescription}
 		</p>
 
-		<h3>Steden in {data.province.name} met {categoryName}</h3>
-		<ul class="city-list">
-			{#each cities as city}
-				<li>{city} ({storesByCity[city].length} winkels)</li>
-			{/each}
+		<h3>Waarom tweedehands {categoryName} in {data.city.name}?</h3>
+		<ul>
+			<li>Duurzaam en milieuvriendelijk winkelen</li>
+			<li>Betaalbare prijzen voor kwaliteitsproducten</li>
+			<li>Unieke vondsten die je nergens anders vindt</li>
+			<li>Steun lokale kringwinkels en goede doelen</li>
+			<li>Draag bij aan de circulaire economie</li>
 		</ul>
+
+		<h3>Over kringwinkels in {data.city.name}</h3>
+		<p>
+			{data.city.name} heeft een mooie selectie aan kringwinkels en tweedehandswinkels waar je
+			{categoryName.toLowerCase()} kunt vinden. Deze winkels bieden niet alleen betaalbare producten, maar
+			dragen ook bij aan een duurzame samenleving door hergebruik te stimuleren.
+		</p>
 	</section>
 </div>
 
@@ -178,23 +176,14 @@
 		font-weight: 600;
 	}
 
-	.city-section {
+	.stores {
 		margin-bottom: 3rem;
-	}
-
-	.city-section h2 {
-		font-size: 1.8rem;
-		color: #34495e;
-		margin-bottom: 1.5rem;
-		padding-bottom: 0.5rem;
-		border-bottom: 3px solid #3498db;
 	}
 
 	.store-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 		gap: 1.5rem;
-		margin-bottom: 2rem;
 	}
 
 	.store-card {
@@ -273,22 +262,18 @@
 		font-size: 1.1rem;
 		line-height: 1.7;
 		color: #555;
+		margin-bottom: 1rem;
 	}
 
-	.city-list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		gap: 0.75rem;
-		list-style: none;
-		padding: 0;
+	.seo-content ul {
+		list-style-position: inside;
+		padding-left: 1rem;
 	}
 
-	.city-list li {
-		background: white;
-		padding: 0.75rem 1rem;
-		border-radius: 6px;
-		border-left: 4px solid #3498db;
-		font-weight: 500;
+	.seo-content li {
+		font-size: 1.05rem;
+		line-height: 1.8;
 		color: #555;
+		margin-bottom: 0.5rem;
 	}
 </style>
