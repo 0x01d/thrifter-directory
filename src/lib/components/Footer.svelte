@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 
 	const currentYear = new Date().getFullYear();
 
@@ -33,10 +34,8 @@
 			<div class="footer-section">
 				<h3 class="footer-heading">Quick Links</h3>
 				<ul class="footer-links">
-					<li><a href="/">{m.provinces()}</a></li>
-					<li><a href="/">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href={localizeHref('/', getLocale())}>{m.provinces()}</a></li>
+					<li><a href={localizeHref('/', getLocale())}>Home</a></li>
 				</ul>
 			</div>
 
@@ -82,11 +81,6 @@
 
 		<div class="footer-bottom">
 			<p class="copyright">&copy; {currentYear} Thrifter.be. All rights reserved.</p>
-			<div class="footer-meta">
-				<a href="#privacy">Privacy Policy</a>
-				<span class="separator">•</span>
-				<a href="#terms">Terms of Service</a>
-			</div>
 		</div>
 	</div>
 </footer>

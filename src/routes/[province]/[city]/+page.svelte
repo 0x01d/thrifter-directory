@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -20,8 +21,8 @@
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">{m.home()}</a> /
-		<a href="/{data.province.slug}">{data.province.name}</a> /
+		<a href={localizeHref('/', getLocale())}>{m.home()}</a> /
+		<a href={localizeHref(`/${data.province.slug}`, getLocale())}>{data.province.name}</a> /
 		<span>{data.city.name}</span>
 	</nav>
 
@@ -32,7 +33,7 @@
 		<div class="store-list">
 			{#each data.stores as store}
 				<a
-					href="/{data.province.slug}/{data.city.slug}/{store.slug}"
+					href={localizeHref(`/${data.province.slug}/${data.city.slug}/${store.slug}`, getLocale())}
 					class="store-card"
 				>
 					<h3>{store.name}</h3>

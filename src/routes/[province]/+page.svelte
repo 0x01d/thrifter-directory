@@ -1,8 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 
 	let { data }: { data: PageData } = $props();
+
+	// Create a city lookup map for easy access to city slugs
+	const cityLookup = new Map(data.cities.map((city) => [city.name, city]));
 
 	// Group stores by city for display
 	const storesByCity = new Map<string, typeof data.stores>();
@@ -24,7 +28,7 @@
 
 <div class="container">
 	<nav class="breadcrumb">
-		<a href="/">{m.home()}</a> / <span>{data.province.name}</span>
+		<a href={localizeHref('/', getLocale())}>{m.home()}</a> / <span>{data.province.name}</span>
 	</nav>
 
 	<h1>{data.province.name}</h1>
@@ -36,7 +40,7 @@
 		<h2>{m.cities()}</h2>
 		<div class="city-grid">
 			{#each data.cities as city}
-				<a href="/{data.province.slug}/{city.slug}" class="city-card">
+				<a href={localizeHref(`/${data.province.slug}/${city.slug}`, getLocale())} class="city-card">
 					<h3>{city.name}</h3>
 					<p>{m.store_count({ count: city.storeCount })}</p>
 				</a>
@@ -49,16 +53,14 @@
 		{#each Array.from(storesByCity.entries()) as [cityName, cityStores]}
 			<div class="city-section">
 				<h3>
-					<a href="/{data.province.slug}/{cityStores[0].slug.split('-').pop()}"
+					<a href={localizeHref(`/${data.province.slug}/${cityLookup.get(cityName)?.slug}`, getLocale())}
 						>{cityName}</a
 					>
 				</h3>
 				<div class="store-list">
 					{#each cityStores as store}
 						<a
-							href="/{data.province.slug}/{store.city
-								.toLowerCase()
-								.replace(/\s+/g, '-')}/{store.slug}"
+							href={localizeHref(`/${data.province.slug}/${cityLookup.get(store.city)?.slug}/${store.slug}`, getLocale())}
 							class="store-card"
 						>
 							<h4>{store.name}</h4>

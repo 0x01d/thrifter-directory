@@ -23,7 +23,7 @@
 
 <header class="site-header">
 	<div class="header-container">
-		<a href="/" class="logo" onclick={closeMobileMenu}>
+		<a href={localizeHref('/', getLocale())} class="logo" onclick={closeMobileMenu}>
 			<svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
@@ -65,7 +65,7 @@
 		</button>
 
 		<nav class="main-nav" class:open={mobileMenuOpen}>
-			<a href="/" onclick={closeMobileMenu}>{m.provinces()}</a>
+			<a href={localizeHref('/', getLocale())} onclick={closeMobileMenu}>{m.provinces()}</a>
 			<div class="language-switcher">
 				<span class="lang-label">Language:</span>
 				{#each locales as locale}
