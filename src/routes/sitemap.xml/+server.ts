@@ -15,8 +15,14 @@ export const GET: RequestHandler = async () => {
 	// Add home page for each locale
 	for (const locale of locales) {
 		urls.push(`${baseUrl}/${locale}`);
-		urls.push(`${baseUrl}/${locale}/cities`);
-		urls.push(`${baseUrl}/${locale}/categories`);
+
+		// Cities page - translated per locale
+		const citiesPath = locale === 'nl' ? 'steden' : locale === 'fr' ? 'villes' : 'cities';
+		urls.push(`${baseUrl}/${locale}/${citiesPath}`);
+
+		// Categories page - translated per locale
+		const categoriesPath = locale === 'nl' ? 'categorieen' : 'categories';
+		urls.push(`${baseUrl}/${locale}/${categoriesPath}`);
 	}
 
 	// Add province pages for each locale
@@ -36,7 +42,8 @@ export const GET: RequestHandler = async () => {
 	// Add category pages for each locale
 	for (const category of data.categories) {
 		for (const locale of locales) {
-			urls.push(`${baseUrl}/${locale}/categories/${category.slug}`);
+			const categoriesPath = locale === 'nl' ? 'categorieen' : 'categories';
+			urls.push(`${baseUrl}/${locale}/${categoriesPath}/${category.slug}`);
 		}
 	}
 
@@ -47,7 +54,8 @@ export const GET: RequestHandler = async () => {
 			const stores = data.storesByCategoryAndProvince.get(key);
 			if (stores && stores.length > 0) {
 				for (const locale of locales) {
-					urls.push(`${baseUrl}/${locale}/${province.slug}/categories/${category.slug}`);
+					const categoriesPath = locale === 'nl' ? 'categorieen' : 'categories';
+					urls.push(`${baseUrl}/${locale}/${province.slug}/${categoriesPath}/${category.slug}`);
 				}
 			}
 		}
@@ -60,8 +68,9 @@ export const GET: RequestHandler = async () => {
 			const stores = data.storesByCategoryAndCity.get(key);
 			if (stores && stores.length > 0) {
 				for (const locale of locales) {
+					const categoriesPath = locale === 'nl' ? 'categorieen' : 'categories';
 					urls.push(
-						`${baseUrl}/${locale}/${city.provinceSlug}/${city.slug}/categories/${category.slug}`
+						`${baseUrl}/${locale}/${city.provinceSlug}/${city.slug}/${categoriesPath}/${category.slug}`
 					);
 				}
 			}

@@ -46,6 +46,15 @@ export default defineConfig({
 						['en', '/categories']
 					]
 				},
+				// Cities list page
+				{
+					pattern: '/cities',
+					localized: [
+						['nl', '/steden'],
+						['fr', '/villes'],
+						['en', '/cities']
+					]
+				},
 				// Wildcard pattern for all other untranslated routes
 				{
 					pattern: '/:path(.*)?',
