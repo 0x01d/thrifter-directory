@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Diest",
+    "province": "Vlaams-Brabant",
+    "name": "Kringwinkel Diest",
+    "category": "Thrift store",
+    "address": "Nijverheidslaan 33, 3290 Diest, Belgium",
+    "phone": "+32 13 55 66 07",
+    "website": "kringwinkel.be",
+    "stars": "3.9",
+    "review_count": "183 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Diest/data=!4m7!3m6!1s0x47c138aaa2c03ef1:0x144e273dbb75615b!8m2!3d50.9891891!4d5.0381927!16s%2Fg%2F11bwkfz579!19sChIJ8T7Aoqo4wUcRW2F1uz0nThQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Diest",
+    "province": "Vlaams-Brabant",
+    "name": "De Kilomeet Diest",
+    "category": null,
+    "address": "Nijverheidslaan 33a, 3290 Diest, Belgium",
+    "phone": "+32 13 55 66 07",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "4 stars, 0 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kilomeet+Diest/data=!4m7!3m6!1s0x47c138aaa15f33f3:0x639a0b625ae911d1!8m2!3d50.9899798!4d5.0386519!16s%2Fg%2F11h51cvffc!19sChIJ8zNfoao4wUcR0RHpWmILmmM?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Diest",
+    "province": "Vlaams-Brabant",
+    "name": "Kringshop.be (webshop Kringwinkel)",
+    "category": "Non-profit organization",
+    "address": "Nijverheidslaan 33a, 3290 Diest, Belgium",
+    "phone": "+32 13 89 28 93",
+    "website": "kringwinkel.be",
+    "stars": "4.4",
+    "review_count": "21 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringshop.be+%28webshop+Kringwinkel%29/data=!4m7!3m6!1s0x47c400a024f9f00d:0x1c11aba916fe43c6!8m2!3d50.9891364!4d5.0381682!16s%2Fg%2F11c6y_9wz4!19sChIJDfD5JKAAxEcRxkP-FqmrERw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

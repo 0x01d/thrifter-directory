@@ -1,0 +1,67 @@
+[
+  {
+    "city": "Poperinge",
+    "province": "West-Vlaanderen",
+    "name": "Kringwinkel Poperinge",
+    "category": "Thrift store",
+    "address": "Ieperstraat 231, 8970 Poperinge, Belgium",
+    "phone": "",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "44 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Poperinge/data=!4m7!3m6!1s0x47dcc4875a2f8ca7:0xf9d969e50ebdc3f7!8m2!3d50.8547922!4d2.7411839!16s%2Fg%2F1pxwklv11!19sChIJp4wvWofE3EcR98O9DuVp2fk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Poperinge",
+    "province": "West-Vlaanderen",
+    "name": "De Kringwinkel",
+    "category": "Thrift store",
+    "address": "Steverlyncklaan 8, 8900 Ieper, Belgium",
+    "phone": "+32 78 15 50 05",
+    "website": "kringwinkelwest.be",
+    "stars": "3.9",
+    "review_count": "84 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel/data=!4m7!3m6!1s0x47dcce5fb72d2a03:0x9fc46628a966f790!8m2!3d50.8492853!4d2.9015202!16s%2Fg%2F1pxw3bqt8!19sChIJAyott1_O3EcRkPdmqShmxJ8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Poperinge",
+    "province": "West-Vlaanderen",
+    "name": "Passée simple 2dehands merkkledij",
+    "category": "Used clothing store",
+    "address": "Zonnebeekseweg 243, 8900 Ieper, Belgium",
+    "phone": "+32 478 37 06 74",
+    "website": "ieper.be",
+    "stars": "4.5",
+    "review_count": "25 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Pass%C3%A9e+simple+2dehands+merkkledij/data=!4m7!3m6!1s0x47dcce8dcdfdfec9:0x7f851a44eaeb4f0d!8m2!3d50.8593903!4d2.9100969!16s%2Fg%2F1tf23b_p!19sChIJyf79zY3O3EcRDU_r6kQahX8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Poperinge",
+    "province": "West-Vlaanderen",
+    "name": "AOC Group NV",
+    "category": "Factory outlet shop",
+    "address": "Nijverheidsstraat 14, 8970 Poperinge, Belgium",
+    "phone": "+32 57 34 63 00",
+    "website": "agora-outlet.be",
+    "stars": "4.5",
+    "review_count": "33 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/AOC+Group+NV/data=!4m7!3m6!1s0x47dcc39c3d1df48d:0x52a0ecd73e22b4ae!8m2!3d50.8519458!4d2.7418348!16s%2Fg%2F11bzx4k_yh!19sChIJjfQdPZzD3EcRrrQiPtfsoFI?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Poperinge",
+    "province": "West-Vlaanderen",
+    "name": "verkoopzaal casselstraat poperinge",
+    "category": "Second hand store",
+    "address": "Casselstraat, 8970 Poperinge, Belgium",
+    "phone": "+32 470 69 96 70",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/verkoopzaal+casselstraat+poperinge/data=!4m7!3m6!1s0x47dcc3bbf7358ab7:0x182de6798690e927!8m2!3d50.8502122!4d2.7191429!16s%2Fg%2F11x64cgny1!19sChIJt4o197vD3EcRJ-mQhnnmLRg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

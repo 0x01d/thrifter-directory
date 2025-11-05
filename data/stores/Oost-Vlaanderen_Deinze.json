@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Deinze",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel Deinze",
+    "category": "Thrift store",
+    "address": "Tolpoortstraat 89, 9800 Deinze, Belgium",
+    "phone": "+32 9 224 07 15",
+    "website": "kringwinkel.be",
+    "stars": "4.1",
+    "review_count": "114 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Deinze/data=!4m7!3m6!1s0x47c36b5fe0e14a55:0xcbbb83b6807a5832!8m2!3d50.9798247!4d3.5299962!16s%2Fg%2F11bzx2svjh!19sChIJVUrh4F9rw0cRMlh6gLaDu8s?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Deinze",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel Ateljee",
+    "category": null,
+    "address": "Slachthuisstraat 18/B, 9800 Deinze, Belgium",
+    "phone": "+32 9 380 37 76",
+    "website": "dekringwinkel.be",
+    "stars": null,
+    "review_count": "Learn more about legal disclosure regarding public reviews on Google Maps",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Ateljee/data=!4m7!3m6!1s0x47c36b649d0ba449:0xfef9ddbb2d7b8b7d!8m2!3d50.9887407!4d3.5264909!16s%2Fg%2F1tg_8mzx!19sChIJSaQLnWRrw0cRfYt7Lbvd-f4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

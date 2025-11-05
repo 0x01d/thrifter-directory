@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Zottegem",
+    "province": "Oost-Vlaanderen",
+    "name": "Ommekaar",
+    "category": "Thrift store",
+    "address": "Laurens de Metsstraat 19, 9620 Zottegem, Belgium",
+    "phone": "",
+    "website": "ommekaarzottegem.be",
+    "stars": "4.7",
+    "review_count": "7 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Ommekaar/data=!4m7!3m6!1s0x47c30a00d13a9515:0x2b595c1160f95e39!8m2!3d50.8713865!4d3.8118555!16s%2Fg%2F11j08b7256!19sChIJFZU60QAKw0cROV75YBFcWSs?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Zottegem",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel",
+    "category": "Thrift store",
+    "address": "Heldenlaan 77, 9620 Zottegem, Belgium",
+    "phone": "+32 54 32 05 00",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "54 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel/data=!4m7!3m6!1s0x47c30a01344d8983:0x5ee9a1d88f03e738!8m2!3d50.871902!4d3.8101172!16s%2Fg%2F11cn3vcgbv!19sChIJg4lNNAEKw0cROOcDj9ih6V4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Zottegem",
+    "province": "Oost-Vlaanderen",
+    "name": "Oxfam Wereldwinkel",
+    "category": "Store",
+    "address": "Hoogstraat 28, 9620 Zottegem, Belgium",
+    "phone": "+32 9 360 54 73",
+    "website": "oxfambelgie.be",
+    "stars": "4.6",
+    "review_count": "5 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Oxfam+Wereldwinkel/data=!4m7!3m6!1s0x47c30a01bc59359b:0x56c24cd492a61fa!8m2!3d50.8686181!4d3.809567!16s%2Fg%2F11b8c4zzl5!19sChIJmzVZvAEKw0cR-mEqSc0kbAU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

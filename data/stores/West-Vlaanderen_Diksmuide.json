@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Diksmuide",
+    "province": "West-Vlaanderen",
+    "name": "Kringwinkel Diksmuide",
+    "category": "Thrift store",
+    "address": "IJzerlaan 49, 8600 Diksmuide, Belgium",
+    "phone": "+32 78 15 50 05",
+    "website": "kringwinkel.be",
+    "stars": "3.9",
+    "review_count": "16 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Diksmuide/data=!4m7!3m6!1s0x47dcb76dd1d91fab:0xc3f164e5478561a8!8m2!3d51.0331598!4d2.8576654!16s%2Fg%2F11fsmtflv_!19sChIJqx_Z0W233EcRqGGFR-Vk8cM?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Diksmuide",
+    "province": "West-Vlaanderen",
+    "name": "Eco-Shop Diksmuide",
+    "category": "Used furniture store",
+    "address": "IJzerlaan 34, 8600 Diksmuide, Belgium",
+    "phone": "+32 51 51 10 39",
+    "website": "ecoshop.be",
+    "stars": "4.0",
+    "review_count": "305 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Eco-Shop+Diksmuide/data=!4m7!3m6!1s0x47dcb765ad1f68d3:0x616e6728a89ca7d2!8m2!3d51.0325546!4d2.8589609!16s%2Fg%2F1pxw788fg!19sChIJ02gfrWW33EcR0qecqChnbmE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Diksmuide",
+    "province": "West-Vlaanderen",
+    "name": "Kringloopwinkel",
+    "category": null,
+    "address": "IJzerlaan 51, 8600 Diksmuide, Belgium",
+    "phone": "+32 494 33 26 56",
+    "website": "dekringwinkel.be",
+    "stars": "3.6",
+    "review_count": "91 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel/data=!4m7!3m6!1s0x47dcb76dd166cf3b:0xad1612e90a51720f!8m2!3d51.0331412!4d2.857592!16s%2Fg%2F1pxws600d!19sChIJO89m0W233EcRD3JRCukSFq0?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

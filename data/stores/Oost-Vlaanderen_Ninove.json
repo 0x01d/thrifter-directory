@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Ninove",
+    "province": "Oost-Vlaanderen",
+    "name": "",
+    "category": null,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Ninove/data=!4m7!3m6!1s0x47c3bb6a0f232c5d:0xae27d1f475f3ff23!8m2!3d50.8380827!4d4.0116318!16s%2Fg%2F1tkrkz7w!19sChIJXSwjD2q7w0cRI__zdfTRJ64?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ninove",
+    "province": "Oost-Vlaanderen",
+    "name": "Gratis Afhalen",
+    "category": "Store",
+    "address": "Ring-West 11, 9400 Ninove, Belgium",
+    "phone": "+32 493 68 24 21",
+    "website": "gratisafhalen.be",
+    "stars": "5.0",
+    "review_count": "4 stars, 0 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Gratis+Afhalen/data=!4m7!3m6!1s0x47c3bb4188ae4349:0xf5128fff70a05294!8m2!3d50.8435133!4d4.0314961!16s%2Fg%2F11flkcffps!19sChIJSUOuiEG7w0cRlFKgcP-PEvU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ninove",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel Liedekerke",
+    "category": "Thrift store",
+    "address": "Poortstraat 32, 1770 Liedekerke, Belgium",
+    "phone": "+32 54 32 05 00",
+    "website": "kringwinkel.be",
+    "stars": "3.6",
+    "review_count": "136 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Liedekerke/data=!4m7!3m6!1s0x47c3bc6c415a324b:0x87d7fddacb7ec27b!8m2!3d50.8717936!4d4.0815154!16s%2Fg%2F1tvgthkh!19sChIJSzJaQWy8w0cRe8J-y9r914c?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ninove",
+    "province": "Oost-Vlaanderen",
+    "name": "De Kringloopwinkel ' T Vierkant",
+    "category": null,
+    "address": "Ring-Oost 14b, 9400 Ninove, Belgium",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringloopwinkel+%27+T+Vierkant/data=!4m7!3m6!1s0x47c3bb6a0f188daf:0x4fbcba032f497d59!8m2!3d50.8430633!4d4.0345611!16s%2Fg%2F11dy_rkj1p!19sChIJr40YD2q7w0cRWX1JLwO6vE8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

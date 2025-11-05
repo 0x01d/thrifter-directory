@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Tielt",
+    "province": "West-Vlaanderen",
+    "name": "Kringwinkel Tielt",
+    "category": "Thrift store",
+    "address": "Deken Darraslaan 58, 8700 Tielt, Belgium",
+    "phone": "+32 51 24 49 14",
+    "website": "kringwinkel.be",
+    "stars": "4.3",
+    "review_count": "182 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Tielt/data=!4m7!3m6!1s0x47c347235fe7e98b:0x66937f0099d60e7b!8m2!3d50.9977804!4d3.3181965!16s%2Fg%2F1pxwlkgkm!19sChIJi-nnXyNHw0cRew7WmQB_k2Y?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Tielt",
+    "province": "West-Vlaanderen",
+    "name": "",
+    "category": null,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/Next+Life+%7C+Tweedehands+Merkkledij/data=!4m7!3m6!1s0x47c347719d233c1b:0x6985300144ac0293!8m2!3d51.0005587!4d3.3267357!16s%2Fg%2F11y6bbg_6x!19sChIJGzwjnXFHw0cRkwKsRAEwhWk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Herve",
+    "province": "Luik",
+    "name": "Tele-Entraide",
+    "category": "Store",
+    "address": "Sur le Try 18, 4650 Herve, Belgium",
+    "phone": "+32 87 21 30 50",
+    "website": "teleentraide.be",
+    "stars": "4.6",
+    "review_count": "85 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Tele-Entraide/data=!4m7!3m6!1s0x47c08cc2555b7c19:0xedae93364e87d2a2!8m2!3d50.6431427!4d5.8008201!16s%2Fg%2F1tfycqbl!19sChIJGXxbVcKMwEcRotKHTjaTru0?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Herve",
+    "province": "Luik",
+    "name": "Try'Fouille",
+    "category": "Thrift store",
+    "address": "Sur le Try 18, 4650 Herve, Belgium",
+    "phone": "",
+    "website": "localisy.com",
+    "stars": "1.0",
+    "review_count": "5 stars, 0 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Try%27Fouille/data=!4m7!3m6!1s0x47c08d006bc617c3:0xb8fde6f295f9050d!8m2!3d50.6431427!4d5.8008201!16s%2Fg%2F11x0mtybx7!19sChIJwxfGawCNwEcRDQX5lfLm_bg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "Amster'Madam",
+    "category": "Vintage clothing store",
+    "address": "Bakkersstraat 28, 8370 Blankenberge, Belgium",
+    "phone": "+32 470 32 55 41",
+    "website": "",
+    "stars": "4.9",
+    "review_count": "72 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Amster%27Madam/data=!4m7!3m6!1s0x47c4abd249ba2c71:0xaabe55c2a859f1a6!8m2!3d51.3150613!4d3.1277298!16s%2Fg%2F11t2n1lkxs!19sChIJcSy6SdKrxEcRpvFZqMJVvqo?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "Kringwinkel Zeebrugge",
+    "category": "Store",
+    "address": "Vismijnstraat 111, 8380 Brugge, Belgium",
+    "phone": "+32 50 34 94 00",
+    "website": "kringwinkel.be",
+    "stars": "4.5",
+    "review_count": "197 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Zeebrugge/data=!4m7!3m6!1s0x47c4a96f33b743cd:0xac7bf2eb8b201e82!8m2!3d51.3334123!4d3.2062525!16s%2Fg%2F11vbcfdzf2!19sChIJzUO3M2-pxEcRgh4gi-vye6w?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "The Antique Hall",
+    "category": "Second hand store",
+    "address": "Blankenbergse Dijk 53, 8370 Blankenberge, Belgium",
+    "phone": "",
+    "website": "theantiquehall.be",
+    "stars": "4.9 stars · 72",
+    "review_count": "Learn more about legal disclosure regarding public reviews on Google Maps",
+    "google_maps_url": "https://www.google.com/maps/place/The+Antique+Hall/data=!4m7!3m6!1s0x83589c8d42e87ca1:0xf5b63b689e7ebd8!8m2!3d51.3034768!4d3.1389386!16s%2Fg%2F11sxwz1qwk!19sChIJoXzoQo2cWIMR2OvnibZjWw8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "De Kringwinkel 't rad - Blankenberge",
+    "category": null,
+    "address": "Ambachtstraat 5, 8370 Blankenberge, Belgium",
+    "phone": "+32 50 34 94 00",
+    "website": "kringwinkel.be",
+    "stars": "3.9",
+    "review_count": "252 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+%27t+rad+-+Blankenberge/data=!4m7!3m6!1s0x47c355f3b2c75f47:0x579b1dfca4650970!8m2!3d51.2966578!4d3.152797!16s%2Fg%2F11g8vq0dx_!19sChIJR1_HsvNVw0cRcAllpPwdm1c?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "NieNouveau",
+    "category": null,
+    "address": "Bakkersstraat 36, 8370 Blankenberge, Belgium",
+    "phone": "+32 50 96 63 62",
+    "website": "",
+    "stars": "3.9",
+    "review_count": "20 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/NieNouveau/data=!4m7!3m6!1s0x47c4aa7d3b827897:0x683baa7a812a1009!8m2!3d51.3148673!4d3.1278465!16s%2Fg%2F11f0019hsr!19sChIJl3iCO32qxEcRCRAqgXqqO2g?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Blankenberge",
+    "province": "West-Vlaanderen",
+    "name": "Bij Maurice & Victorine",
+    "category": "Second hand store",
+    "address": "Weststraat 13, 8370 Blankenberge, Belgium",
+    "phone": "+32 472 43 39 47",
+    "website": "bij-maurice-en-victorine.be",
+    "stars": "5.0",
+    "review_count": "3 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Bij+Maurice+%26+Victorine/data=!4m7!3m6!1s0x47c4aba3d27941fd:0x9829d124fb81790c!8m2!3d51.3149885!4d3.1247704!16s%2Fg%2F11txg_26q0!19sChIJ_UF50qOrxEcRDHmB-yTRKZg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

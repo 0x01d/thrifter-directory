@@ -1,0 +1,67 @@
+[
+  {
+    "city": "Aalst",
+    "province": "Oost-Vlaanderen",
+    "name": "De Kringwinkel",
+    "category": "Thrift store",
+    "address": "Tragel 5, 9300 Aalst, Belgium",
+    "phone": "+32 53 78 61 73",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "147 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel/data=!4m7!3m6!1s0x47c3bd5d99929199:0xd186aaf5567cac45!8m2!3d50.9460798!4d4.0380113!16s%2Fg%2F1tkb489c!19sChIJmZGSmV29w0cRRax8VvWqhtE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aalst",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel Aalst (kleding)",
+    "category": "Thrift store",
+    "address": "Kattestraat 48, 9300 Aalst, Belgium",
+    "phone": "+32 53 78 61 73",
+    "website": "kringwinkel.be",
+    "stars": "3.7",
+    "review_count": "69 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Aalst+%28kleding%29/data=!4m7!3m6!1s0x47c3bd5783933d65:0x82ac3a6e7074c330!8m2!3d50.9401763!4d4.0367256!16s%2Fg%2F11bxg4ptrn!19sChIJZT2Tg1e9w0cRMMN0cG46rII?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aalst",
+    "province": "Oost-Vlaanderen",
+    "name": "De Kilomeet",
+    "category": "Thrift store",
+    "address": "1 Meistraat 13, 9300 Aalst, Belgium",
+    "phone": "+32 53 78 61 73",
+    "website": "kringwinkel.be",
+    "stars": "4.4",
+    "review_count": "24 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kilomeet/data=!4m7!3m6!1s0x47c3bd5f876b57c1:0x7cd3ff71c6fe0694!8m2!3d50.9422936!4d4.0453534!16s%2Fg%2F11c45gb05q!19sChIJwVdrh1-9w0cRlAb-xnH_03w?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aalst",
+    "province": "Oost-Vlaanderen",
+    "name": "Eco-Shop Aalst",
+    "category": "Used furniture store",
+    "address": "Pierre Corneliskaai 26, 9300 Aalst, Belgium",
+    "phone": "+32 53 70 86 96",
+    "website": "ecoshop.be",
+    "stars": "3.9",
+    "review_count": "144 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Eco-Shop+Aalst/data=!4m7!3m6!1s0x47c397e372aece71:0xd99e086b323233b9!8m2!3d50.9452629!4d4.0399685!16s%2Fg%2F1vg_6g6v!19sChIJcc6ucuOXw0cRuTMyMmsIntk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aalst",
+    "province": "Oost-Vlaanderen",
+    "name": "Oxfam shop Aalst",
+    "category": "Clothing store",
+    "address": "Lange Zoutstraat 49, 9300 Aalst, Belgium",
+    "phone": "+32 485 24 18 50",
+    "website": "oxfambelgie.be",
+    "stars": "3.4",
+    "review_count": "9 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Oxfam+shop+Aalst/data=!4m7!3m6!1s0x47c3bdcd5c559c03:0x7e5aedbc1eca0069!8m2!3d50.936652!4d4.0395749!16s%2Fg%2F11l6shhrs7!19sChIJA5xVXM29w0cRaQDKHrztWn4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

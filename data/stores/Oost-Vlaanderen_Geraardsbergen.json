@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Geraardsbergen",
+    "province": "Oost-Vlaanderen",
+    "name": "Kringwinkel Geraardsbergen",
+    "category": "Thrift store",
+    "address": "Stadsweg 35, 9500 Geraardsbergen, Belgium",
+    "phone": "+32 54 32 05 00",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "115 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Geraardsbergen/data=!4m7!3m6!1s0x47c3a9ed34e07887:0x6805938b85b1baad!8m2!3d50.7714949!4d3.8693929!16s%2Fg%2F11f631sf4n!19sChIJh3jgNO2pw0cRrbqxhYuTBWg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geraardsbergen",
+    "province": "Oost-Vlaanderen",
+    "name": "Authentic Stuff",
+    "category": "Second hand store",
+    "address": "Oudenaardsestraat 26, 9500 Geraardsbergen, Belgium",
+    "phone": "+32 479 32 32 31",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Authentic+Stuff/data=!4m7!3m6!1s0x47c3a9c623577a79:0xe92f9c791295471c!8m2!3d50.7717253!4d3.8746146!16s%2Fg%2F11y1v7xh5s!19sChIJeXpXI8apw0cRHEeVEnmcL-k?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geraardsbergen",
+    "province": "Oost-Vlaanderen",
+    "name": "Fil's",
+    "category": "Second hand store",
+    "address": "Gaverstraat 34, 9500 Geraardsbergen, Belgium",
+    "phone": "+32 498 59 17 66",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "11 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Fil%27s/data=!4m7!3m6!1s0x47c3a9fa375e8dc9:0x6e72e782e7d5cc2d!8m2!3d50.7617801!4d3.8773076!16s%2Fg%2F11xmfr747n!19sChIJyY1eN_qpw0cRLczV54Lncm4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geraardsbergen",
+    "province": "Oost-Vlaanderen",
+    "name": "De Kringwinkel 't Vierkant",
+    "category": null,
+    "address": "Abdijstraat 4B, 9500 Geraardsbergen, Belgium",
+    "phone": "+32 54 32 05 00",
+    "website": "dekringwinkel.be",
+    "stars": "4.2",
+    "review_count": "12 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+%27t+Vierkant/data=!4m7!3m6!1s0x47c3a8a58e17507d:0xe51d5a475ad2aeb7!8m2!3d50.773999!4d3.883423!16s%2Fg%2F1tf19xwc!19sChIJfVAXjqWow0cRt67SWkdaHeU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

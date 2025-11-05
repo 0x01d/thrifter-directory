@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Lommel",
+    "province": "Limburg",
+    "name": "Kringwinkel Lommel",
+    "category": "Thrift store",
+    "address": "Stationsstraat 206, 3920 Lommel, Belgium",
+    "phone": "+32 11 55 31 60",
+    "website": "kringwinkel.be",
+    "stars": "3.7",
+    "review_count": "97 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Lommel/data=!4m7!3m6!1s0x47c12d51ee2460cf:0xde14bb012b8734fd!8m2!3d51.2155783!4d5.3127651!16s%2Fg%2F1tmqfby1!19sChIJz2Ak7lEtwUcR_TSHKwG7FN4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Lommel",
+    "province": "Limburg",
+    "name": "Kringwinkel Chique Lommel",
+    "category": "Thrift store",
+    "address": "Kerkstraat 19, 3920 Lommel, Belgium",
+    "phone": "+32 11 82 32 94",
+    "website": "kringwinkel.be",
+    "stars": "4.1",
+    "review_count": "7 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Chique+Lommel/data=!4m7!3m6!1s0x47c6d307d67242f5:0xd68ae63076e038a4!8m2!3d51.2302871!4d5.3109977!16s%2Fg%2F11smr9vy7x!19sChIJ9UJy1gfTxkcRpDjgdjDmitY?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Lommel",
+    "province": "Limburg",
+    "name": "Draak vintage",
+    "category": "Store",
+    "address": "Heide 87a, 3920 Lommel, Belgium",
+    "phone": "+32 496 53 54 53",
+    "website": "draakvintage.be",
+    "stars": "5.0",
+    "review_count": "24 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Draak+vintage/data=!4m7!3m6!1s0x47c6d3403c015cfb:0xf70ef17543933397!8m2!3d51.2412111!4d5.3179298!16s%2Fg%2F11szb8_m4s!19sChIJ-1wBPEDTxkcRlzOTQ3XxDvc?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

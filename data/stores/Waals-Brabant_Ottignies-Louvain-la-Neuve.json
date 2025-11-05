@@ -1,0 +1,80 @@
+[
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Les Petits Riens",
+    "category": "Used clothing store",
+    "address": "Agora 11, 1348 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "+32 10 39 72 80",
+    "website": "petitsriens.be",
+    "stars": "4.0",
+    "review_count": "48 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Les+Petits+Riens/data=!4m7!3m6!1s0x47c17fb8c2f5a9e7:0xcec378b7d2d3e4f1!8m2!3d50.6691809!4d4.6126663!16s%2Fg%2F11srgl5s9w!19sChIJ56n1wrh_wUcR8eTT0rd4w84?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Apides",
+    "category": "Second hand store",
+    "address": "Rpe des Ardennais, 1348 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "+32 10 24 74 94",
+    "website": "apides.be",
+    "stars": "4.7",
+    "review_count": "11 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Apides/data=!4m7!3m6!1s0x47c17e770b3864b9:0x2cef88e39c8e6319!8m2!3d50.6683465!4d4.6157101!16s%2Fg%2F11c2nc924f!19sChIJuWQ4C3d-wUcRGWOOnOOI7yw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Friperie du Kotextile",
+    "category": "Used clothing store",
+    "address": "Rue des Blancs Chevaux 14, 1348 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "",
+    "website": "facebook.com",
+    "stars": "5.0",
+    "review_count": "6 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Friperie+du+Kotextile/data=!4m7!3m6!1s0x47c17f77e4861235:0x512ab2a1d6c4b90d!8m2!3d50.6707024!4d4.6092287!16s%2Fg%2F11rdvr6cgt!19sChIJNRKG5Hd_wUcRDbnE1qGyKlE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Second Chapitre",
+    "category": "Toy store",
+    "address": "Espa. du Coeur de Ville 8, 1340 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "+32 10 41 88 10",
+    "website": "secondchapitre.be",
+    "stars": "4.3",
+    "review_count": "28 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Second+Chapitre/data=!4m7!3m6!1s0x47c3d5fb288047c9:0x10551e6adf32cdcf!8m2!3d50.6651421!4d4.5673057!16s%2Fg%2F11dxhz5t8w!19sChIJyUeAKPvVw0cRz80y32oeVRA?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Vestiboutique Croix-Rouge de Belgique",
+    "category": "Used clothing store",
+    "address": "Bd Martin 3, 1340 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "+32 10 41 60 08",
+    "website": "maisons.croix-rouge.be",
+    "stars": "4.7",
+    "review_count": "10 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Vestiboutique+Croix-Rouge+de+Belgique/data=!4m7!3m6!1s0x47c3d58e0f0ece09:0x5c0667597f9be145!8m2!3d50.665645!4d4.56872!16s%2Fg%2F11f8h_6kkq!19sChIJCc4OD47Vw0cRReGbf1lnBlw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Ottignies-Louvain-la-Neuve",
+    "province": "Waals-Brabant",
+    "name": "Truc à Troc",
+    "category": "Second hand store",
+    "address": "Place du Puddleur 1, 1348 Ottignies-Louvain-la-Neuve, Belgium",
+    "phone": "",
+    "website": "map.olln.be",
+    "stars": "4.4",
+    "review_count": "18 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Truc+%C3%A0+Troc/data=!4m7!3m6!1s0x47c17fc542c51c1f:0x7fbaefa414f77635!8m2!3d50.6649502!4d4.6112816!16s%2Fg%2F11h3nnbl5c!19sChIJHxzFQsV_wUcRNXb3FKTvun8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

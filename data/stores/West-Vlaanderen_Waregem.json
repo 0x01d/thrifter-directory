@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Waregem",
+    "province": "West-Vlaanderen",
+    "name": "De Kringloopwinkel Beveren-Leie",
+    "category": "Op Shop",
+    "address": "Kortrijkseweg 346, 8791 Waregem, Belgium",
+    "phone": "+32 56 23 29 40",
+    "website": "dekringloopwinkel.be",
+    "stars": "4.1",
+    "review_count": "189 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringloopwinkel+Beveren-Leie/data=!4m7!3m6!1s0x47c33c27b8c28455:0xe5c8a6f17eb07727!8m2!3d50.8790186!4d3.3579003!16s%2Fg%2F1thfdljz!19sChIJVYTCuCc8w0cRJ3ewfvGmyOU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Waregem",
+    "province": "West-Vlaanderen",
+    "name": "",
+    "category": null,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/The+Feelgood+Vintage+Club+-+webshop/data=!4m7!3m6!1s0x47c33de67fcad3e5:0xb8f64c8da02b1d2e!8m2!3d50.8759582!4d3.4207843!16s%2Fg%2F11h_44cpsz!19sChIJ5dPKf-Y9w0cRLh0roI1M9rg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Waregem",
+    "province": "West-Vlaanderen",
+    "name": "De Kringloopwinkel Waregem",
+    "category": "Used clothing store",
+    "address": "Stormestraat 31, 8790 Waregem, Belgium",
+    "phone": "+32 56 23 29 40",
+    "website": "dekringloopwinkel.be",
+    "stars": "5.0",
+    "review_count": "4 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringloopwinkel+Waregem/data=!4m7!3m6!1s0x47c315e45d10a7a3:0x229e9ccefbf7fe54!8m2!3d50.8859661!4d3.4300171!16s%2Fg%2F11y94r6z1r!19sChIJo6cQXeQVw0cRVP73-86cniI?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

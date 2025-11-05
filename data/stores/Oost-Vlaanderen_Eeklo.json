@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Eeklo",
+    "province": "Oost-Vlaanderen",
+    "name": "M-accent Kringloopwinkel Eeklo",
+    "category": "Thrift store",
+    "address": "Slachthuisstraat 2b, 9900 Eeklo",
+    "phone": "09 377 77 74",
+    "website": "m-accent.be",
+    "stars": "4.1",
+    "review_count": "464 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/M-accent+Kringloopwinkel+Eeklo/data=!4m7!3m6!1s0x47c366997af5df59:0x29ef53653dd3b7b0!8m2!3d51.1834078!4d3.5480461!16s%2Fg%2F11bzx3zzt_!19sChIJWd_1eplmw0cRsLfTPWVT7yk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Eeklo",
+    "province": "Oost-Vlaanderen",
+    "name": "Eco-Shop Eeklo",
+    "category": "Used furniture store",
+    "address": "August van Ackerstraat 4, 9900 Eeklo, Belgium",
+    "phone": "+32 9 343 87 38",
+    "website": "ecoshop.be",
+    "stars": "4.2",
+    "review_count": "134 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Eco-Shop+Eeklo/data=!4m7!3m6!1s0x47c364226e12f9db:0xcd4094dbcd32bf50!8m2!3d51.1875706!4d3.5658289!16s%2Fg%2F1pxwbk2kb!19sChIJ2_kSbiJkw0cRUL8yzduUQM0?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

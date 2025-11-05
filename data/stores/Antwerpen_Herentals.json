@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Herentals",
+    "province": "Antwerpen",
+    "name": "De Kringwinkel Zuiderkempen",
+    "category": "Thrift store",
+    "address": "Lierseweg 132, 2200 Herentals, Belgium",
+    "phone": "+32 15 23 73 93",
+    "website": "dekringwinkelzuiderkempen.be",
+    "stars": "3.9",
+    "review_count": "177 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+Zuiderkempen/data=!4m7!3m6!1s0x47c15231f14f5021:0x823b289093d085c1!8m2!3d51.1758908!4d4.8227277!16s%2Fg%2F12hm_45cz!19sChIJIVBP8TFSwUcRwYXQk5AoO4I?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Herentals",
+    "province": "Antwerpen",
+    "name": "Sjans",
+    "category": "Thrift store",
+    "address": "Krokuslaan, 2460 Kasterlee, Belgium",
+    "phone": "+32 15 23 73 93",
+    "website": "sjans.com",
+    "stars": "4.1",
+    "review_count": "60 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Sjans/data=!4m7!3m6!1s0x47c14d3c1f12828d:0x4c89f3cfed67c139!8m2!3d51.2269884!4d4.9091569!16s%2Fg%2F12hlkhxxz!19sChIJjYISHzxNwUcROcFn7c_ziUw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

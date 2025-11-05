@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Thuin",
+    "province": "Henegouwen",
+    "name": "Vestiboutique Croix-Rouge de Belgique",
+    "category": "Used clothing store",
+    "address": "Rue Grignard 31, 6533 Thuin, Belgium",
+    "phone": "+32 490 56 88 24",
+    "website": "maisons.croix-rouge.be",
+    "stars": "5.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Vestiboutique+Croix-Rouge+de+Belgique/data=!4m7!3m6!1s0x47c23d25fa17c571:0x2c98686ac7f8241c!8m2!3d50.3238446!4d4.2597938!16s%2Fg%2F11t5qp2l34!19sChIJccUX-iU9wkcRHCT4x2pomCw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Thuin",
+    "province": "Henegouwen",
+    "name": "De la Cave au Grenier - Vide-maison n°1 à Charleroi",
+    "category": "House clearance service",
+    "address": "Rue Armand Bury 126, 6534 Thuin, Belgium",
+    "phone": "+32 496 75 51 85",
+    "website": "caveaugrenier.be",
+    "stars": "5.0",
+    "review_count": "43 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+la+Cave+au+Grenier+-+Vide-maison+n%C2%B01+%C3%A0+Charleroi/data=!4m7!3m6!1s0x47c223c56ec0c067:0xc97770e46db356de!8m2!3d50.3446513!4d4.3553801!16s%2Fg%2F11h64y2xps!19sChIJZ8DAbsUjwkcR3lazbeRwd8k?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Thuin",
+    "province": "Henegouwen",
+    "name": "Vestiboutique Croix-Rouge de Belgique",
+    "category": "Used clothing store",
+    "address": "Rue de Marchienne 42, 6534 Thuin, Belgium",
+    "phone": "+32 494 57 12 85",
+    "website": "vestiboutiques.croix-rouge.be",
+    "stars": "4.0",
+    "review_count": "6 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Vestiboutique+Croix-Rouge+de+Belgique/data=!4m7!3m6!1s0x47c22380f3bbe459:0xf0867043bea1db56!8m2!3d50.3362273!4d4.3535798!16s%2Fg%2F11sjyz1myw!19sChIJWeS784AjwkcRVtuhvkNwhvA?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

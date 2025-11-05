@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Peer",
+    "province": "Limburg",
+    "name": "The Kringwinkel Esmeralda",
+    "category": "Thrift store",
+    "address": "Steenweg Wijchmaal 66, 3990 Peer, Belgium",
+    "phone": "+32 11 63 61 47",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "104 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/The+Kringwinkel+Esmeralda/data=!4m7!3m6!1s0x47c12985e1ed51ef:0xeb4a5c3a20cabcaa!8m2!3d51.1317708!4d5.4353759!16s%2Fg%2F12ll8bvml!19sChIJ71Ht4YUpwUcRqrzKIDpcSus?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Peer",
+    "province": "Limburg",
+    "name": "De Kringwinkel Chique De Friemel",
+    "category": "Thrift store",
+    "address": "Oudestraat 13, 3990 Peer, Belgium",
+    "phone": "+32 11 60 43 73",
+    "website": "kringwinkel.be",
+    "stars": "4.6",
+    "review_count": "12 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+Chique+De+Friemel/data=!4m7!3m6!1s0x47c129f6b40a6a23:0x288e88e7546d1654!8m2!3d51.1311013!4d5.457052!16s%2Fg%2F11g07xtqh6!19sChIJI2oKtPYpwUcRVBZtVOeIjig?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

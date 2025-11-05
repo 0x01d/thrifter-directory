@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Sint-Truiden",
+    "province": "Limburg",
+    "name": "Kringloopwinkel Okazi",
+    "category": "Thrift store",
+    "address": "Naamsesteenweg 239, 3800 Sint-Truiden, Belgium",
+    "phone": "+32 11 27 35 75",
+    "website": "okazi.be",
+    "stars": "4.0",
+    "review_count": "356 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel+Okazi/data=!4m7!3m6!1s0x47c110c7c53291eb:0xd60ca14c2500f374!8m2!3d50.8032292!4d5.1802048!16s%2Fg%2F11c6z1gzmr!19sChIJ65EyxccQwUcRdPMAJUyhDNY?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Sint-Truiden",
+    "province": "Limburg",
+    "name": "Ferle Jackie opruimen van inboedels",
+    "category": "Used furniture store",
+    "address": "Hasseltsesteenweg 137, 3800 Sint-Truiden, Belgium",
+    "phone": "+32 497 43 88 96",
+    "website": "",
+    "stars": "4.4",
+    "review_count": "29 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Ferle+Jackie+opruimen+van+inboedels/data=!4m7!3m6!1s0x47c11760a194f1c7:0x676d61cfd532e4d7!8m2!3d50.834009!4d5.2092218!16s%2Fg%2F11fy4zbct8!19sChIJx_GUoWAXwUcR1-Qy1c9hbWc?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Sint-Truiden",
+    "province": "Limburg",
+    "name": "",
+    "category": null,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/Finds+-+Vintage+and+more/data=!4m7!3m6!1s0x47c117a03d3536b3:0x56a87aa99caa608d!8m2!3d50.815746!4d5.1813335!16s%2Fg%2F11k3vnq4m4!19sChIJszY1PaAXwUcRjWCqnKl6qFY?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Sint-Truiden",
+    "province": "Limburg",
+    "name": "De GOEIEkoop",
+    "category": "Used clothing store",
+    "address": "Sportpleinstraat 40, 3800 Sint-Truiden, Belgium",
+    "phone": "+32 494 25 74 97",
+    "website": "degoeiekoop.be",
+    "stars": "5.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+GOEIEkoop/data=!4m7!3m6!1s0x47c1198f601f734d:0xba79cd7047354179!8m2!3d50.8373877!4d5.2557147!16s%2Fg%2F11vwfr5cz3!19sChIJTXMfYI8ZwUcReUE1R3DNebo?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

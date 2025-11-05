@@ -1,0 +1,80 @@
+[
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Okazi Boutique",
+    "category": "Used clothing store",
+    "address": "Minderbroedersstraat 58, 3500 Hasselt, Belgium",
+    "phone": "+32 483 24 79 75",
+    "website": "okazi.be",
+    "stars": "4.7",
+    "review_count": "41 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Okazi+Boutique/data=!4m7!3m6!1s0x47c121802050dde1:0x29f8e02fb7d6d285!8m2!3d50.9322543!4d5.3357735!16s%2Fg%2F11bzx1d50f!19sChIJ4d1QIIAhwUcRhdLWty_g-Ck?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Think Twice",
+    "category": "Used clothing store",
+    "address": "Koning Albertstraat 33, 3500 Hasselt, Belgium",
+    "phone": "+32 472 04 00 75",
+    "website": "thinktwice-secondhand.be",
+    "stars": "4.5",
+    "review_count": "41 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Think+Twice/data=!4m7!3m6!1s0x47c121c576876a19:0x3b6bef0effd569cd!8m2!3d50.9279828!4d5.3365309!16s%2Fg%2F11t4cb5pk9!19sChIJGWqHdsUhwUcRzWnV_w7vazs?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Circular Soulstore",
+    "category": "Clothing store",
+    "address": "Persoonstraat 20, 3500 Hasselt, Belgium",
+    "phone": "+32 470 05 18 10",
+    "website": "circularsoulstore.be",
+    "stars": "4.2",
+    "review_count": "30 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Circular+Soulstore/data=!4m7!3m6!1s0x47c12182228be5ff:0xa76939970f6f0f75!8m2!3d50.9307825!4d5.3408217!16s%2Fg%2F1tgd5nzd!19sChIJ_-WLIoIhwUcRdQ9vD5c5aac?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Assepoes",
+    "category": "Used clothing store",
+    "address": "Bampslaan 37, 3500 Hasselt, Belgium",
+    "phone": "+32 11 23 38 82",
+    "website": "assepoes.be",
+    "stars": "4.6",
+    "review_count": "22 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Assepoes/data=!4m7!3m6!1s0x47c1222b037e9965:0xe0aae0d801cb2577!8m2!3d50.9305772!4d5.3298725!16s%2Fg%2F11c1rx5051!19sChIJZZl-AysiwUcRdyXLAdjgquA?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Kringloopwinkel Okazi",
+    "category": "Thrift store",
+    "address": "Sint-Truidersteenweg 150, 3500 Hasselt, Belgium",
+    "phone": "+32 11 27 35 75",
+    "website": "okazi.be",
+    "stars": "4.0",
+    "review_count": "624 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel+Okazi/data=!4m7!3m6!1s0x47c12227fdb2ae43:0xb16de28750a0858a!8m2!3d50.9219805!4d5.3314845!16s%2Fg%2F1pp2vms5j!19sChIJQ66y_SciwUcRioWgUIfibbE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hasselt",
+    "province": "Limburg",
+    "name": "Twenty Second Vintage",
+    "category": "Clothing store",
+    "address": "Zuivelmarkt 64/40, 3500 Hasselt, Belgium",
+    "phone": "",
+    "website": "twentysecondvintage.com",
+    "stars": "5.0",
+    "review_count": "4 stars, 0 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Twenty+Second+Vintage/data=!4m7!3m6!1s0x47c12130215a235f:0x4a3e26bf10094ab!8m2!3d50.9321001!4d5.339683!16s%2Fg%2F11gnrwqvn9!19sChIJXyNaITAhwUcRq5QA8WviowQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

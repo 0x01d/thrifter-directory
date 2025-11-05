@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Aarschot",
+    "province": "Vlaams-Brabant",
+    "name": "The Kringwinkel Hageland",
+    "category": "Thrift store",
+    "address": "Amerstraat 17, 3200 Aarschot, Belgium",
+    "phone": "+32 16 57 25 45",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "184 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/The+Kringwinkel+Hageland/data=!4m7!3m6!1s0x47c15cb233455135:0xb6ddceee99711a92!8m2!3d50.9864731!4d4.8361223!16s%2Fg%2F1v8kzrs3!19sChIJNVFFM7JcwUcRkhpxme7O3bY?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aarschot",
+    "province": "Vlaams-Brabant",
+    "name": "Oud Stadhuis Aarschot",
+    "category": "Clothing store",
+    "address": "Bogaardenstraat 23, 3200 Aarschot, Belgium",
+    "phone": "+32 16 88 06 11",
+    "website": "oudstadhuis.com",
+    "stars": "4.9",
+    "review_count": "47 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Oud+Stadhuis+Aarschot/data=!4m7!3m6!1s0x47c143525fadf2e1:0xc7f3a58ad85e6c21!8m2!3d50.9867403!4d4.8381817!16s%2Fg%2F11ckk7h4b1!19sChIJ4fKtX1JDwUcRIWxe2Iql88c?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aarschot",
+    "province": "Vlaams-Brabant",
+    "name": "Unikamp",
+    "category": "Home goods store",
+    "address": "Diestsesteenweg 16, 3200 Aarschot, Belgium",
+    "phone": "+32 16 56 89 26",
+    "website": "free-time.be",
+    "stars": "4.1",
+    "review_count": "1,701 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Unikamp/data=!4m7!3m6!1s0x47c14399d9e24f0f:0x356f6d0613a28fe4!8m2!3d50.9796298!4d4.8515777!16s%2Fg%2F11b6zxrdqc!19sChIJD0_i2ZlDwUcR5I-iEwZtbzU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Aarschot",
+    "province": "Vlaams-Brabant",
+    "name": "Sjans kringloopwinkel",
+    "category": "Thrift store",
+    "address": "Aarschotsesteenweg 44, 2230 Herselt, Belgium",
+    "phone": "+32 15 23 73 93",
+    "website": "sjans.com",
+    "stars": "4.0",
+    "review_count": "97 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Sjans+kringloopwinkel/data=!4m7!3m6!1s0x47c145c635ea7513:0xd8db2a4d5aa544c4!8m2!3d51.0481691!4d4.8709936!16s%2Fg%2F12hl02zqb!19sChIJE3XqNcZFwUcRxESlWk0q29g?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

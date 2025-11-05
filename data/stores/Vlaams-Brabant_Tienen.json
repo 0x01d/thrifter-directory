@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Tienen",
+    "province": "Vlaams-Brabant",
+    "name": "De Kringwinkel Hageland",
+    "category": "Thrift store",
+    "address": "Minderbroedersstraat 33, 3300 Tienen, Belgium",
+    "phone": "+32 16 82 46 91",
+    "website": "kringwinkel.be",
+    "stars": "4.0",
+    "review_count": "373 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+Hageland/data=!4m7!3m6!1s0x47c16c682ac27271:0xc26a788fefbb87ac!8m2!3d50.8045489!4d4.9378266!16s%2Fg%2F1tdgnzyv!19sChIJcXLCKmhswUcRrIe77494asI?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Tienen",
+    "province": "Vlaams-Brabant",
+    "name": "Needful things",
+    "category": "Thrift store",
+    "address": "Doelstraat 68, 3320 Hoegaarden, Belgium",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/Needful+things/data=!4m7!3m6!1s0x47c16f4d3913262f:0x513928fc0f38d072!8m2!3d50.7745758!4d4.8906986!16s%2Fg%2F11ylf_lgy0!19sChIJLyYTOU1vwUcRctA4D_woOVE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

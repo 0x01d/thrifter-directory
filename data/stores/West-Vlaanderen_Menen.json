@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Menen",
+    "province": "West-Vlaanderen",
+    "name": "",
+    "category": null,
+    "address": "",
+    "phone": "",
+    "website": "",
+    "stars": null,
+    "review_count": null,
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringloopwinkel+Menen+-+Markt/data=!4m7!3m6!1s0x47c32f07d69c4ee7:0xe145cae02222a329!8m2!3d50.7957951!4d3.1215832!16s%2Fg%2F11p4bhyf0p!19sChIJ506c1gcvw0cRKaMiIuDKReE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Menen",
+    "province": "West-Vlaanderen",
+    "name": "Eco-Shop Menen",
+    "category": "Used furniture store",
+    "address": "Waalvest 39, 8930 Menen, Belgium",
+    "phone": "+32 56 20 17 83",
+    "website": "ecoshop.be",
+    "stars": "4.0",
+    "review_count": "390 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Eco-Shop+Menen/data=!4m7!3m6!1s0x47c32e0f77ea2937:0xa4a1d3c597e80cd3!8m2!3d50.7926202!4d3.1255956!16s%2Fg%2F1pxw36wlj!19sChIJNynqdw8uw0cR0wzol8XToaQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Menen",
+    "province": "West-Vlaanderen",
+    "name": "Kringloopcentrum Zuid-West-Vlaanderen",
+    "category": "Thrift store",
+    "address": "Kortrijkstraat 448, 8930 Menen, Belgium",
+    "phone": "+32 56 53 28 68",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "3 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopcentrum+Zuid-West-Vlaanderen/data=!4m7!3m6!1s0x47c32e1f40bc8ed5:0xe26a70289168f24d!8m2!3d50.7993665!4d3.1401245!16s%2Fg%2F11bzx2vc9b!19sChIJ1Y68QB8uw0cRTfJokShwauI?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Menen",
+    "province": "West-Vlaanderen",
+    "name": "The Kringloopwinkel Menen",
+    "category": "Thrift store",
+    "address": "Kortrijkstraat 448, 8930 Menen, Belgium",
+    "phone": "+32 56 23 29 40",
+    "website": "dekringloopwinkel.be",
+    "stars": "4.2",
+    "review_count": "120 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/The+Kringloopwinkel+Menen/data=!4m7!3m6!1s0x47c32de621d31527:0x4c849bdadb0549f1!8m2!3d50.7996526!4d3.1397751!16s%2Fg%2F1tffhyd4!19sChIJJxXTIeYtw0cR8UkF29qbhEw?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

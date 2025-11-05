@@ -1,0 +1,67 @@
+[
+  {
+    "city": "Genk",
+    "province": "Limburg",
+    "name": "vzw Reset",
+    "category": "Thrift store",
+    "address": "Bosdel 36, 3600 Genk, Belgium",
+    "phone": "+32 89 36 43 45",
+    "website": "vzwreset.be",
+    "stars": "3.7",
+    "review_count": "140 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/vzw+Reset/data=!4m7!3m6!1s0x47c0df23db7478b9:0x6e39213ee0b990cc!8m2!3d50.9502772!4d5.4839891!16s%2Fg%2F1td52l60!19sChIJuXh02yPfwEcRzJC54D4hOW4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Genk",
+    "province": "Limburg",
+    "name": "De Kringwinkel De Koop",
+    "category": "Second hand store",
+    "address": "Bosdel 36, 3600 Genk, Belgium",
+    "phone": "",
+    "website": "dekringwinkel.be",
+    "stars": "4.2",
+    "review_count": "22 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/De+Kringwinkel+De+Koop/data=!4m7!3m6!1s0x47c0df23dcd06197:0x54c8dbe4ae62041e!8m2!3d50.9501852!4d5.4839622!16s%2Fg%2F11g4f4q2hn!19sChIJl2HQ3CPfwEcRHgRiruTbyFQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Genk",
+    "province": "Limburg",
+    "name": "Tweedehandswinkel Parel",
+    "category": "Clothing store",
+    "address": "Molenstraat 3, 3600 Genk, Belgium",
+    "phone": "+32 474 91 79 62",
+    "website": "cchparel.blogspot.com",
+    "stars": "4.8",
+    "review_count": "4 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Tweedehandswinkel+Parel/data=!4m7!3m6!1s0x47c0ded37b451eab:0x7265603b822be1f!8m2!3d50.9645142!4d5.5007807!16s%2Fg%2F11hdjcw15p!19sChIJqx5Fe9PewEcRH74iuANWJgc?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Genk",
+    "province": "Limburg",
+    "name": "Kringloopwinkel Okazi",
+    "category": "Thrift store",
+    "address": "Nieuwstraat 195, 3590 Diepenbeek, Belgium",
+    "phone": "+32 11 27 35 75",
+    "website": "okazi.be",
+    "stars": "4.2",
+    "review_count": "12 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel+Okazi/data=!4m7!3m6!1s0x47c0dff60a4af781:0x4b8ed6546ff3f08b!8m2!3d50.9263082!4d5.4551818!16s%2Fg%2F11l2z9zc_5!19sChIJgfdKCvbfwEcRi_Dzb1TWjks?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Genk",
+    "province": "Limburg",
+    "name": "vzw Zuiderlicht",
+    "category": "Used clothing store",
+    "address": "Rootenstraat 21/bus 1, 3600 Genk, Belgium",
+    "phone": "",
+    "website": "sites.google.com",
+    "stars": "5.0",
+    "review_count": "3 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/vzw+Zuiderlicht/data=!4m7!3m6!1s0x47c0df61c5795049:0x555528d147928275!8m2!3d50.9653899!4d5.5021357!16s%2Fg%2F11q96csx8r!19sChIJSVB5xWHfwEcRdYKSR9EoVVU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

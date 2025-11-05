@@ -1,0 +1,54 @@
+[
+  {
+    "city": "Geel",
+    "province": "Antwerpen",
+    "name": "Sjans Thrift Store Geel",
+    "category": "Thrift store",
+    "address": "Grote Steenweg 8, 2440 Geel, Belgium",
+    "phone": "+32 15 23 73 93",
+    "website": "sjans.com",
+    "stars": "4.0",
+    "review_count": "131 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Sjans+Thrift+Store+Geel/data=!4m7!3m6!1s0x47c1461c81e046a9:0x575af15dd325e160!8m2!3d51.1228054!4d4.9437578!16s%2Fg%2F12hnsn6qc!19sChIJqUbggRxGwUcRYOEl013xWlc?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geel",
+    "province": "Antwerpen",
+    "name": "Sjans Secondhand Store Geel Belgium",
+    "category": "Thrift store",
+    "address": "Heidebloemstraat 93, 2440 Geel, Belgium",
+    "phone": "",
+    "website": "",
+    "stars": "4.1",
+    "review_count": "15 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Sjans+Secondhand+Store+Geel+Belgium/data=!4m7!3m6!1s0x47c14b8a9009c3a7:0xbf7f165bcbc0e60e!8m2!3d51.1685282!4d4.9934712!16s%2Fg%2F11j3vvc_rh!19sChIJp8MJkIpLwUcRDubAy1sWf78?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geel",
+    "province": "Antwerpen",
+    "name": "Het Magazijn",
+    "category": "Second hand store",
+    "address": "Winkelomseheide 114, 2440 Geel, Belgium",
+    "phone": "+32 479 29 97 34",
+    "website": "",
+    "stars": "4.6",
+    "review_count": "28 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Het+Magazijn/data=!4m7!3m6!1s0x47c14933aece45b5:0x160cefcc72acdfb4!8m2!3d51.1302269!4d5.0121012!16s%2Fg%2F11j8vzd1y8!19sChIJtUXOrjNJwUcRtN-scszvDBY?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Geel",
+    "province": "Antwerpen",
+    "name": "ReLove Store",
+    "category": null,
+    "address": "Larumseweg 124, 2440 Geel, Belgium",
+    "phone": "+32 492 34 15 68",
+    "website": "facebook.com",
+    "stars": "4.4",
+    "review_count": "134 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/ReLove+Store/data=!4m7!3m6!1s0x47c14b7e6bd5b873:0x5b77d61d89526188!8m2!3d51.1645688!4d4.950039!16s%2Fg%2F11j07l2wjj!19sChIJc7jVa35LwUcRiGFSiR3Wd1s?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

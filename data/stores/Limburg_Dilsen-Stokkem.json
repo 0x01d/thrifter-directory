@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Dilsen-Stokkem",
+    "province": "Limburg",
+    "name": "Kringwinkel Dilsen-Stokkem (De Burenwinkel)",
+    "category": "Thrift store",
+    "address": "Burgemeester Henrylaan 157, 3650 Dilsen-Stokkem, Belgium",
+    "phone": "+32 89 77 92 92",
+    "website": "kringwinkel.be",
+    "stars": "4.3",
+    "review_count": "74 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Dilsen-Stokkem+%28De+Burenwinkel%29/data=!4m7!3m6!1s0x47c0cfc1fb2fb51d:0xea94397f9913e68f!8m2!3d51.067468!4d5.7281631!16s%2Fg%2F11jbnz9394!19sChIJHbUv-8HPwEcRj-YTmX85lOo?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Dilsen-Stokkem",
+    "province": "Limburg",
+    "name": "Kringwinkel Maaseik",
+    "category": "Thrift store",
+    "address": "Jagersborgweg 1122, 3680 Maaseik, Belgium",
+    "phone": "+32 89 77 92 92",
+    "website": "kringwinkel.be",
+    "stars": "3.9",
+    "review_count": "321 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Maaseik/data=!4m7!3m6!1s0x47c0ce92494b4b47:0x2e556580d6b994e4!8m2!3d51.1034745!4d5.7439438!16s%2Fg%2F11dxckgktv!19sChIJR0tLSZLOwEcR5JS51oBlVS4?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

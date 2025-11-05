@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Eupen",
+    "province": "Luik",
+    "name": "3R",
+    "category": "Thrift store",
+    "address": "Rue Mitoyenne 218, 4710 Lontzen, Belgium",
+    "phone": "+32 87 89 08 39",
+    "website": "les3r.be",
+    "stars": "4.2",
+    "review_count": "260 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/3R/data=!4m7!3m6!1s0x47c08faeecb8b51f:0x8972f36bacf0c389!8m2!3d50.6637961!4d5.9781759!16s%2Fg%2F1tgvcs9h!19sChIJH7W47K6PwEcRicPwrGvzcok?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Eupen",
+    "province": "Luik",
+    "name": "Belgisches Rotes Kreuz - Schatztruhe",
+    "category": "Used clothing store",
+    "address": "Neustraße 71, 4700 Eupen, Belgium",
+    "phone": "+32 87 55 74 69",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Belgisches+Rotes+Kreuz+-+Schatztruhe/data=!4m7!3m6!1s0x47c0858bcd51d787:0x3a60ef182d575a82!8m2!3d50.6264899!4d6.0314523!16s%2Fg%2F11ryz4hx4f!19sChIJh9dRzYuFwEcRglpXLRjvYDo?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Eupen",
+    "province": "Luik",
+    "name": "Oxfam Solidarite - Oxfam Solidariteit",
+    "category": null,
+    "address": "Kirchstraße 39, 4700 Eupen, Belgium",
+    "phone": "+32 87 35 23 60",
+    "website": "",
+    "stars": "4.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Oxfam+Solidarite+-+Oxfam+Solidariteit/data=!4m7!3m6!1s0x47c085b6897eaf05:0x643d8353250cb4c7!8m2!3d50.6300401!4d6.0329047!16s%2Fg%2F11g6vhbzqs!19sChIJBa9-ibaFwEcRx7QMJVODPWQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

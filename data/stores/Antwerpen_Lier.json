@@ -1,0 +1,28 @@
+[
+  {
+    "city": "Lier",
+    "province": "Antwerpen",
+    "name": "Kringloopwinkel Opnieuw & Co Lier",
+    "category": "Thrift store",
+    "address": "Antwerpsesteenweg 391, 2500 Lier, Belgium",
+    "phone": "+32 3 488 38 83",
+    "website": "opnieuwenco.be",
+    "stars": "4.1",
+    "review_count": "285 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel+Opnieuw+%26+Co+Lier/data=!4m7!3m6!1s0x47c3e4d52f4a43c9:0x59f5f5727a93582b!8m2!3d51.1433549!4d4.5460105!16s%2Fg%2F1tfjdq24!19sChIJyUNKL9Xkw0cRK1iTenL19Vk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Lier",
+    "province": "Antwerpen",
+    "name": "Opnieuw & Co Kringloopboetiek",
+    "category": "Thrift store",
+    "address": "Antwerpsestraat 94, 2500 Lier, Belgium",
+    "phone": "+32 3 488 38 83",
+    "website": "opnieuwenco.be",
+    "stars": "4.5",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Opnieuw+%26+Co+Kringloopboetiek/data=!4m7!3m6!1s0x47c3fd9a7d07f02b:0x7de2b5cecc792a85!8m2!3d51.1339366!4d4.566932!16s%2Fg%2F11y46g636q!19sChIJK_AHfZr9w0cRhSp5zM614n0?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

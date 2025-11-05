@@ -1,0 +1,67 @@
+[
+  {
+    "city": "Hannuit",
+    "province": "Henegouwen",
+    "name": "La Maison du Cœur ASBL",
+    "category": "Thrift store",
+    "address": "Rue de Tirlemont 106, 4280 Hannut, Belgium",
+    "phone": "+32 493 48 97 54",
+    "website": "facebook.com",
+    "stars": "4.2",
+    "review_count": "177 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/La+Maison+du+C%C5%93ur+ASBL/data=!4m7!3m6!1s0x47c10c3746d34cb3:0x5b4f76bda25c1130!8m2!3d50.6858711!4d5.0654664!16s%2Fg%2F11cmyyn25k!19sChIJs0zTRjcMwUcRMBFcor12T1s?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hannuit",
+    "province": "Henegouwen",
+    "name": "Fines Mouches",
+    "category": "Used clothing store",
+    "address": "Rue Albert 1er 88, 4280 Hannut, Belgium",
+    "phone": "+32 493 18 09 48",
+    "website": "facebook.com",
+    "stars": "4.6",
+    "review_count": "22 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Fines+Mouches/data=!4m7!3m6!1s0x47c10f69a224381f:0xa961e270fc90a438!8m2!3d50.669623!4d5.0826809!16s%2Fg%2F11grpttr4d!19sChIJHzgkomkPwUcROKSQ_HDiYak?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hannuit",
+    "province": "Henegouwen",
+    "name": "Nar6sik Créations",
+    "category": "Gift shop",
+    "address": "Rue Zénobe Gramme 12, 4280 Hannut",
+    "phone": "0478 39 55 79",
+    "website": "nar6sik.be",
+    "stars": "4.8",
+    "review_count": "132 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Nar6sik+Cr%C3%A9ations/data=!4m7!3m6!1s0x47c10c1f35c1d3c9:0xab051da23ea07b6f!8m2!3d50.671891!4d5.0770597!16s%2Fg%2F11b6_fbl44!19sChIJydPBNR8MwUcRb3ugPqIdBas?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hannuit",
+    "province": "Henegouwen",
+    "name": "Vestiboutique Croix-Rouge de Belgique",
+    "category": "Used clothing store",
+    "address": "Rue Zénobe Gramme 11, 4280 Hannut, Belgium",
+    "phone": "+32 19 51 17 24",
+    "website": "vestiboutiques.croix-rouge.be",
+    "stars": "5.0",
+    "review_count": "Learn more about legal disclosure regarding public reviews on Google Maps",
+    "google_maps_url": "https://www.google.com/maps/place/Vestiboutique+Croix-Rouge+de+Belgique/data=!4m7!3m6!1s0x47c10d18add300ef:0xaa5a8710ecde993a!8m2!3d50.6718086!4d5.0774017!16s%2Fg%2F11ydxpq75p!19sChIJ7wDTrRgNwUcROpne7BCHWqo?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Hannuit",
+    "province": "Henegouwen",
+    "name": "Hannaert / Catherine",
+    "category": "Second hand store",
+    "address": "Rue de Wasseiges 3, 4280 Hannut, Belgium",
+    "phone": "+32 19 51 06 06",
+    "website": "",
+    "stars": "4.0",
+    "review_count": "3 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Hannaert+%2F+Catherine/data=!4m7!3m6!1s0x47c10c0eee1ce6b7:0x950623d9d1ef0685!8m2!3d50.6596534!4d5.0637146!16s%2Fg%2F1tcv0l2k!19sChIJt-Yc7g4MwUcRhQbv0dkjBpU?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

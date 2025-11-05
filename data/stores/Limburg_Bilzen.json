@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Bilzen",
+    "province": "Limburg",
+    "name": "La Vie En Rose",
+    "category": "Used clothing store",
+    "address": "Stationlaan 40, 3740 Bilzen-Hoeselt, Belgium",
+    "phone": "+32 89 41 41 66",
+    "website": "",
+    "stars": "3.5",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/La+Vie+En+Rose/data=!4m7!3m6!1s0x47c0e0ba51af7c65:0x2f7e6a0645cbb838!8m2!3d50.8688345!4d5.5109652!16s%2Fg%2F1tgx5rhc!19sChIJZXyvUbrgwEcROLjLRQZqfi8?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Bilzen",
+    "province": "Limburg",
+    "name": "vzw Reset",
+    "category": "Thrift store",
+    "address": "Spaalderweg 7, 3770 Riemst, Belgium",
+    "phone": "+32 12 69 00 41",
+    "website": "vzwreset.be",
+    "stars": "4.2",
+    "review_count": "51 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/vzw+Reset/data=!4m7!3m6!1s0x47c0e7cac7030467:0x8b0e1dcfc37aaf9!8m2!3d50.817749!4d5.5985699!16s%2Fg%2F11f9vn07wp!19sChIJZwQDx8rnwEcR-ao3_NzhsAg?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Bilzen",
+    "province": "Limburg",
+    "name": "Kringloopwinkel",
+    "category": "Thrift store",
+    "address": "Hasseltsestraat 4, 3740 Bilzen-Hoeselt, Belgium",
+    "phone": "+32 89 50 27 37",
+    "website": "vzwreset.be",
+    "stars": "4.1",
+    "review_count": "122 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringloopwinkel/data=!4m7!3m6!1s0x47c0e0a49e07309f:0x99e9adc1808e4612!8m2!3d50.8737305!4d5.5071293!16s%2Fg%2F11bx85h99w!19sChIJnzAHnqTgwEcREkaOgMGt6Zk?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]

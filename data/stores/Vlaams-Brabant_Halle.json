@@ -1,0 +1,41 @@
+[
+  {
+    "city": "Halle",
+    "province": "Vlaams-Brabant",
+    "name": "Kringwinkel Halle",
+    "category": "Thrift store",
+    "address": "Bergensesteenweg 65, 1500 Halle, Belgium",
+    "phone": "+32 78 48 34 04",
+    "website": "kringwinkel.be",
+    "stars": "3.9",
+    "review_count": "89 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Halle/data=!4m7!3m6!1s0x47c3c8507fe27481:0x64827be6e7c5c8a8!8m2!3d50.732995!4d4.2326535!16s%2Fg%2F1pv5tkhqn!19sChIJgXTif1DIw0cRqMjF5-Z7gmQ?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Halle",
+    "province": "Vlaams-Brabant",
+    "name": "Kringwinkel Sint-Pieters-Leeuw",
+    "category": "Thrift store",
+    "address": "Bergensesteenweg 704 A, 1600 Sint-Pieters-Leeuw, Belgium",
+    "phone": "+32 78 48 34 04",
+    "website": "kringwinkel.be",
+    "stars": "3.8",
+    "review_count": "200 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/Kringwinkel+Sint-Pieters-Leeuw/data=!4m7!3m6!1s0x47c3c6150197e777:0x95ef98b8eb408d44!8m2!3d50.7672233!4d4.2542519!16s%2Fg%2F1tgx5s3b!19sChIJd-eXARXGw0cRRI1A67iY75U?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  },
+  {
+    "city": "Halle",
+    "province": "Vlaams-Brabant",
+    "name": "JADE STYLE",
+    "category": "Used clothing store",
+    "address": "Nijvelsesteenweg 345, 1500 Halle, Belgium",
+    "phone": "+32 485 96 30 80",
+    "website": "",
+    "stars": "5.0",
+    "review_count": "2 reviews",
+    "google_maps_url": "https://www.google.com/maps/place/JADE+STYLE/data=!4m7!3m6!1s0x47c3c90364cecc31:0x31ebf05bc2409eed!8m2!3d50.7219837!4d4.249806!16s%2Fg%2F11b77g81p7!19sChIJMczOZAPJw0cR7Z5Awlvw6zE?authuser=0&hl=en&rclk=1",
+    "website_content": null
+  }
+]
