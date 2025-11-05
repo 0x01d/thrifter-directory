@@ -2,22 +2,41 @@
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
+	import SEOTags from '$lib/components/SEOTags.svelte';
+	import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
 
 	let { data }: { data: PageData } = $props();
+
+	const locale = getLocale();
+	const baseUrl = 'https://thrifter.be';
+	const currentUrl = `${baseUrl}${localizeHref(`/${data.province.slug}/${data.city.slug}`, locale)}`;
+	const pageTitle = `${data.city.name}, ${data.province.name} - ${m.thrift_stores_in({ location: 'België' })} - Thrifter.be`;
+	const pageDescription = m.find_all_stores_in({
+		count: data.stores.length,
+		location: `${data.city.name}, ${data.province.name}`
+	});
 </script>
 
 <svelte:head>
-	<title
-		>{data.city.name}, {data.province.name} - {m.thrift_stores_in({ location: 'België' })} - Thrifter.be</title
-	>
-	<meta
-		name="description"
-		content={m.find_all_stores_in({
-			count: data.stores.length,
-			location: `${data.city.name}, ${data.province.name}`
-		})}
-	/>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
 </svelte:head>
+
+<SEOTags
+	title={pageTitle}
+	description={pageDescription}
+	url={currentUrl}
+	canonical={currentUrl}
+	type="website"
+/>
+
+<BreadcrumbSchema
+	items={[
+		{ name: 'Home', url: `${baseUrl}${localizeHref('/', locale)}` },
+		{ name: data.province.name, url: `${baseUrl}${localizeHref(`/${data.province.slug}`, locale)}` },
+		{ name: data.city.name, url: currentUrl }
+	]}
+/>
 
 <div class="container">
 	<nav class="breadcrumb">

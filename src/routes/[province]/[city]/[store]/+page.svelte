@@ -2,15 +2,43 @@
 	import type { PageData } from './$types';
 	import * as m from '$lib/paraglide/messages.js';
 	import { getLocale, localizeHref } from '$lib/paraglide/runtime.js';
+	import SEOTags from '$lib/components/SEOTags.svelte';
+	import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
+	import LocalBusinessSchema from '$lib/components/LocalBusinessSchema.svelte';
 
 	let { data }: { data: PageData } = $props();
 	const { store, provinceSlug, citySlug } = data;
+
+	const locale = getLocale();
+	const baseUrl = 'https://thrifter.be';
+	const currentUrl = `${baseUrl}${localizeHref(`/${provinceSlug}/${citySlug}/${store.slug}`, locale)}`;
+	const pageTitle = `${store.name} - ${store.city}, ${store.province} - Thrifter.be`;
+	const pageDescription = store.description || `${store.category} in ${store.city}, ${store.province}. ${store.address}`;
 </script>
 
 <svelte:head>
-	<title>{store.name} - {store.city}, {store.province} - Thrifter.be</title>
-	<meta name="description" content="{store.category} in {store.city}, {store.province}" />
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
 </svelte:head>
+
+<SEOTags
+	title={pageTitle}
+	description={pageDescription}
+	url={currentUrl}
+	canonical={currentUrl}
+	type="article"
+/>
+
+<BreadcrumbSchema
+	items={[
+		{ name: 'Home', url: `${baseUrl}${localizeHref('/', locale)}` },
+		{ name: store.province, url: `${baseUrl}${localizeHref(`/${provinceSlug}`, locale)}` },
+		{ name: store.city, url: `${baseUrl}${localizeHref(`/${provinceSlug}/${citySlug}`, locale)}` },
+		{ name: store.name, url: currentUrl }
+	]}
+/>
+
+<LocalBusinessSchema {store} url={currentUrl} />
 
 <div class="container">
 	<nav class="breadcrumb">

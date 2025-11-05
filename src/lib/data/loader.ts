@@ -161,3 +161,11 @@ export async function getCitiesForProvince(provinceSlug: string): Promise<City[]
 	const data = await loadDirectoryData();
 	return data.cities.filter((city) => city.provinceSlug === provinceSlug);
 }
+
+/**
+ * Get all cities
+ */
+export async function getCities(): Promise<City[]> {
+	const data = await loadDirectoryData();
+	return data.cities;
+}
