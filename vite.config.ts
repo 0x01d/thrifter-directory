@@ -81,6 +81,15 @@ export default defineConfig({
 						['fr', '/fr/villes'],
 						['en', '/en/cities']
 					]
+				},
+				// Home page
+				{
+					pattern: '/',
+					localized: [
+						['nl', '/'],
+						['fr', '/fr'],
+						['en', '/en']
+					]
 				}
 			]
 		})
