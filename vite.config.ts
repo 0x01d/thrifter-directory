@@ -19,6 +19,15 @@ export default defineConfig({
 						['en', '/:province/:city/categories/:category']
 					]
 				},
+				// City + Store detail page
+				{
+					pattern: '/:province/:city/:store',
+					localized: [
+						['nl', '/:province/:city/:store'],
+						['fr', '/:province/:city/:store'],
+						['en', '/:province/:city/:store']
+					]
+				},
 				// Province + Category
 				{
 					pattern: '/:province/categories/:category',
@@ -26,6 +35,15 @@ export default defineConfig({
 						['nl', '/:province/categorieen/:category'],
 						['fr', '/:province/categories/:category'],
 						['en', '/:province/categories/:category']
+					]
+				},
+				// Province + City pages
+				{
+					pattern: '/:province/:city',
+					localized: [
+						['nl', '/:province/:city'],
+						['fr', '/:province/:city'],
+						['en', '/:province/:city']
 					]
 				},
 				// Category detail page
@@ -55,13 +73,22 @@ export default defineConfig({
 						['en', '/cities']
 					]
 				},
-				// Wildcard pattern for all other untranslated routes
+				// Province pages
 				{
-					pattern: '/:path(.*)?',
+					pattern: '/:province',
 					localized: [
-						['nl', '/:path(.*)?'],
-						['fr', '/:path(.*)?'],
-						['en', '/:path(.*)?']
+						['nl', '/:province'],
+						['fr', '/:province'],
+						['en', '/:province']
+					]
+				},
+				// Home page
+				{
+					pattern: '/',
+					localized: [
+						['nl', '/'],
+						['fr', '/'],
+						['en', '/']
 					]
 				}
 			]
