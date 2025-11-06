@@ -10,13 +10,31 @@ export default defineConfig({
 			outdir: './src/lib/paraglide',
 			strategy: ['url', 'preferredLanguage', 'baseLocale'],
 			urlPatterns: [
-				// Most specific patterns first - City + Category
+				// Most specific patterns first - City + Category + Store
+				{
+					pattern: '/:province/:city/:store',
+					localized: [
+						['nl', '/:province/:city/:store'],
+						['fr', '/fr/:province/:city/:store'],
+						['en', '/en/:province/:city/:store']
+					]
+				},
+				// City + Category
 				{
 					pattern: '/:province/:city/categories/:category',
 					localized: [
 						['nl', '/:province/:city/categorieen/:category'],
-						['fr', '/:province/:city/categories/:category'],
-						['en', '/:province/:city/categories/:category']
+						['fr', '/fr/:province/:city/categories/:category'],
+						['en', '/en/:province/:city/categories/:category']
+					]
+				},
+				// City page
+				{
+					pattern: '/:province/:city',
+					localized: [
+						['nl', '/:province/:city'],
+						['fr', '/fr/:province/:city'],
+						['en', '/en/:province/:city']
 					]
 				},
 				// Province + Category
@@ -24,8 +42,17 @@ export default defineConfig({
 					pattern: '/:province/categories/:category',
 					localized: [
 						['nl', '/:province/categorieen/:category'],
-						['fr', '/:province/categories/:category'],
-						['en', '/:province/categories/:category']
+						['fr', '/fr/:province/categories/:category'],
+						['en', '/en/:province/categories/:category']
+					]
+				},
+				// Province page
+				{
+					pattern: '/:province',
+					localized: [
+						['nl', '/:province'],
+						['fr', '/fr/:province'],
+						['en', '/en/:province']
 					]
 				},
 				// Category detail page
@@ -33,8 +60,8 @@ export default defineConfig({
 					pattern: '/categories/:category',
 					localized: [
 						['nl', '/categorieen/:category'],
-						['fr', '/categories/:category'],
-						['en', '/categories/:category']
+						['fr', '/fr/categories/:category'],
+						['en', '/en/categories/:category']
 					]
 				},
 				// Categories list page
@@ -42,8 +69,8 @@ export default defineConfig({
 					pattern: '/categories',
 					localized: [
 						['nl', '/categorieen'],
-						['fr', '/categories'],
-						['en', '/categories']
+						['fr', '/fr/categories'],
+						['en', '/en/categories']
 					]
 				},
 				// Cities list page
@@ -51,17 +78,17 @@ export default defineConfig({
 					pattern: '/cities',
 					localized: [
 						['nl', '/steden'],
-						['fr', '/villes'],
-						['en', '/cities']
+						['fr', '/fr/villes'],
+						['en', '/en/cities']
 					]
 				},
-				// Wildcard pattern for all other untranslated routes
+				// Home page
 				{
-					pattern: '/:path(.*)?',
+					pattern: '/',
 					localized: [
-						['nl', '/:path(.*)?'],
-						['fr', '/:path(.*)?'],
-						['en', '/:path(.*)?']
+						['nl', '/'],
+						['fr', '/fr'],
+						['en', '/en']
 					]
 				}
 			]
