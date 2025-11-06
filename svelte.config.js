@@ -3,15 +3,22 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import fs from 'fs';
 import path from 'path';
 
-// Helper function to slugify strings
+// Category slugs for generating prerender entries
+const CATEGORY_SLUGS = ['vintage-kleding', 'designer-merken', 'meubels', 'boeken', 'elektronica', 'speelgoed'];
+
+// Helper function to slugify strings - matches src/lib/utils/slug.ts
 function slugify(text) {
 	return text
-		.toString()
 		.toLowerCase()
-		.trim()
-		.replace(/[\s_]+/g, '-')
-		.replace(/[^\w\-]+/g, '')
-		.replace(/\-\-+/g, '-');
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+		.replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with hyphens
+		.replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+}
+
+// Generate store slug - matches generateStoreSlug from src/lib/utils/slug.ts
+function generateStoreSlug(store) {
+	return `${slugify(store.name)}-${slugify(store.city)}`;
 }
 
 // Generate prerender entries for all language variants
@@ -53,71 +60,83 @@ function generatePrerenderEntries() {
 	const stores = data.map(store => ({
 		provinceSlug: slugify(store.province),
 		citySlug: slugify(store.city),
-		storeSlug: slugify(`${store.name}-${store.city}`)
+		storeSlug: generateStoreSlug(store)
 	}));
 
-	const categories = [...new Set(data.flatMap(store => {
-		if (!store.category) return [];
-		// Categories can be comma-separated
-		return store.category.split(',').map(c => c.trim().toLowerCase());
-	}))];
+	// Use predefined category slugs instead of deriving from store data
+	const categories = CATEGORY_SLUGS;
 
 	// Home page - nl is /, fr is /fr, en is /en
 	entries.push('/');
-	// TEMP: commenting out language-prefixed URLs to test
-	// entries.push('/fr');
-	// entries.push('/en');
+	entries.push('/fr');
+	entries.push('/en');
 
-	// Categories list page - nl is /categorieen, fr is /fr/categories, en is /en/categories
+	// Categories list page - base pattern: /categories
+	// Localized: nl=/categorieen, fr=/fr/categories, en=/en/categories
+	entries.push('/categories');  // Base pattern (actual route)
 	entries.push('/categorieen');
-	// entries.push('/fr/categories');
-	// entries.push('/en/categories');
+	entries.push('/fr/categories');
+	entries.push('/en/categories');
 
-	// Cities list page - nl is /steden, fr is /fr/villes, en is /en/villes
+	// Cities list page - base pattern: /cities
+	// Localized: nl=/steden, fr=/fr/villes, en=/en/cities
+	entries.push('/cities');  // Base pattern (actual route)
 	entries.push('/steden');
-	// entries.push('/fr/villes');
-	// entries.push('/en/cities');
+	entries.push('/fr/villes');
+	entries.push('/en/cities');
 
-	// Category detail pages - nl is /categorieen/:category, fr is /fr/categories/:category, en is /en/categories/:category
+	// Sitemap
+	entries.push('/sitemap.xml');
+
+	// Category detail pages - base pattern: /categories/:category
+	// Localized: nl=/categorieen/:category, fr=/fr/categories/:category, en=/en/categories/:category
 	for (const category of categories) {
+		entries.push(`/categories/${category}`);  // Base pattern
 		entries.push(`/categorieen/${category}`);
-		// entries.push(`/fr/categories/${category}`);
-		// entries.push(`/en/categories/${category}`);
+		entries.push(`/fr/categories/${category}`);
+		entries.push(`/en/categories/${category}`);
 	}
 
-	// Province pages - nl is /:province, fr is /fr/:province, en is /en/:province
+	// Province pages - base pattern: /:province
+	// Localized: nl=/:province, fr=/fr/:province, en=/en/:province
 	for (const province of provinces) {
-		entries.push(`/${province}`);
-		// entries.push(`/fr/${province}`);
-		// entries.push(`/en/${province}`);
+		entries.push(`/${province}`);  // nl = base pattern
+		entries.push(`/fr/${province}`);
+		entries.push(`/en/${province}`);
 
-		// Province + Category pages
+		// Province + Category pages - base pattern: /:province/categories/:category
+		// Localized: nl=/:province/categorieen/:category, fr=/fr/:province/categories/:category, en=/en/:province/categories/:category
 		for (const category of categories) {
+			entries.push(`/${province}/categories/${category}`);  // Base pattern
 			entries.push(`/${province}/categorieen/${category}`);
-			// entries.push(`/fr/${province}/categories/${category}`);
-			// entries.push(`/en/${province}/categories/${category}`);
+			entries.push(`/fr/${province}/categories/${category}`);
+			entries.push(`/en/${province}/categories/${category}`);
 		}
 	}
 
-	// City pages - nl is /:province/:city, fr is /fr/:province/:city, en is /en/:province/:city
+	// City pages - base pattern: /:province/:city
+	// Localized: nl=/:province/:city, fr=/fr/:province/:city, en=/en/:province/:city
 	for (const city of cities) {
-		entries.push(`/${city.provinceSlug}/${city.citySlug}`);
-		// entries.push(`/fr/${city.provinceSlug}/${city.citySlug}`);
-		// entries.push(`/en/${city.provinceSlug}/${city.citySlug}`);
+		entries.push(`/${city.provinceSlug}/${city.citySlug}`);  // nl = base pattern
+		entries.push(`/fr/${city.provinceSlug}/${city.citySlug}`);
+		entries.push(`/en/${city.provinceSlug}/${city.citySlug}`);
 
-		// City + Category pages
+		// City + Category pages - base pattern: /:province/:city/categories/:category
+		// Localized: nl=/:province/:city/categorieen/:category, fr=/fr/:province/:city/categories/:category, en=/en/:province/:city/categories/:category
 		for (const category of categories) {
+			entries.push(`/${city.provinceSlug}/${city.citySlug}/categories/${category}`);  // Base pattern
 			entries.push(`/${city.provinceSlug}/${city.citySlug}/categorieen/${category}`);
-			// entries.push(`/fr/${city.provinceSlug}/${city.citySlug}/categories/${category}`);
-			// entries.push(`/en/${city.provinceSlug}/${city.citySlug}/categories/${category}`);
+			entries.push(`/fr/${city.provinceSlug}/${city.citySlug}/categories/${category}`);
+			entries.push(`/en/${city.provinceSlug}/${city.citySlug}/categories/${category}`);
 		}
 	}
 
-	// Store pages - nl is /:province/:city/:store, fr is /fr/:province/:city/:store, en is /en/:province/:city/:store
+	// Store pages - base pattern: /:province/:city/:store
+	// Localized: nl=/:province/:city/:store, fr=/fr/:province/:city/:store, en=/en/:province/:city/:store
 	for (const store of stores) {
-		entries.push(`/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);
-		// entries.push(`/fr/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);
-		// entries.push(`/en/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);
+		entries.push(`/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);  // nl = base pattern
+		entries.push(`/fr/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);
+		entries.push(`/en/${store.provinceSlug}/${store.citySlug}/${store.storeSlug}`);
 	}
 
 	return entries;
@@ -131,15 +150,25 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			entries: ['*'],
-			crawl: true,
+			entries: generatePrerenderEntries(),
+			crawl: true,  // Enable crawling to follow invisible anchor tags for language variants
 			handleHttpError: ({ status, path, referrer }) => {
-				// Ignore 404s for all translated URLs - they're handled by the reroute hook at runtime
-				// The prerenderer can't handle them properly, but the files will be generated correctly
+				// Ignore 404s for all translated URLs - they're handled by the reroute hook
+				// This includes:
+				// - Language root pages: /fr, /en
+				// - Language-prefixed URLs: /fr/*, /en/*
+				// - Translated path names: /categorieen, /steden, /villes, /cities, /categories
 				if (status === 404) {
-					console.log(`Ignoring 404 during prerender: ${path}`);
-					return;
+					const isLanguagePrefixed = path.startsWith('/fr') || path.startsWith('/en');
+					const isTranslatedPath = path.includes('/categorieen') || path.includes('/steden') ||
+						path.includes('/villes') || path.includes('/cities') || path.includes('/categories');
+
+					if (isLanguagePrefixed || isTranslatedPath) {
+						console.log(`[Prerender] Ignoring 404 for translated URL: ${path}`);
+						return;
+					}
 				}
+
 				// For other errors, throw
 				throw new Error(`${status} ${path}${referrer ? ` (referred by ${referrer})` : ''}`);
 			}
