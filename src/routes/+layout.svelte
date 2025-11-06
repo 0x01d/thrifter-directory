@@ -22,6 +22,7 @@
 	<Footer />
 </div>
 
+
 <style>
 	:global(body) {
 		margin: 0;

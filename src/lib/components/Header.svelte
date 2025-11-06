@@ -75,7 +75,8 @@
 						class="lang-link"
 						class:active={locale === getLocale()}
 						onclick={closeMobileMenu}
-                        data-sveltekit-reload
+						data-sveltekit-reload
+						data-sveltekit-preload-data="off"
 					>
 						{languageNames[locale]}
 					</a>
