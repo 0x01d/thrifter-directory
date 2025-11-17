@@ -1,0 +1,584 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+// Mock the fs/promises module with inline functions
+vi.mock('fs/promises', () => ({
+	default: {},
+	readdir: vi.fn(),
+	readFile: vi.fn()
+}));
+
+import { readdir, readFile } from 'fs/promises';
+import {
+	loadAllStores,
+	loadDirectoryData,
+	getStoreBySlug,
+	getStoresByProvince,
+	getStoresByCity,
+	getProvinces,
+	getCities,
+	getCitiesForProvince,
+	getCategories,
+	getStoresByCategory,
+	getStoresByCategoryAndProvince,
+	getStoresByCategoryAndCity
+} from './loader';
+
+// Get typed references to the mocked functions
+const mockReaddir = vi.mocked(readdir);
+const mockReadFile = vi.mocked(readFile);
+
+// Sample test data
+const mockStoreData1 = [
+	{
+		name: 'Kringwinkel Antwerpen',
+		city: 'Antwerpen',
+		province: 'Antwerpen',
+		address: 'Test Street 1',
+		phone: '03-123-4567',
+		website: 'kringwinkel.be',
+		category: 'Kringwinkel',
+		stars: '4.5',
+		review_count: '100'
+	},
+	{
+		name: 'Oxfam Solidariteit',
+		city: 'Antwerpen',
+		province: 'Antwerpen',
+		address: 'Test Street 2',
+		phone: '03-987-6543',
+		website: 'oxfam.be',
+		category: 'Oxfam',
+		stars: '4.2',
+		review_count: '50'
+	}
+];
+
+const mockStoreData2 = [
+	{
+		name: 'Les Petits Riens',
+		city: 'Bruxelles',
+		province: 'Bruxelles-Capitale',
+		address: 'Rue Test 1',
+		phone: '02-123-4567',
+		website: 'petitsriens.be',
+		category: 'General',
+		stars: '4.0',
+		review_count: '75'
+	}
+];
+
+const mockStoreDataWithDiacritics = [
+	{
+		name: 'Armée du Salut',
+		city: 'Liège',
+		province: 'Liège',
+		address: 'Rue de la Paix 1',
+		phone: '04-123-4567',
+		website: 'armeedusalut.be',
+		category: 'Salvation Army',
+		stars: '4.3',
+		review_count: '60'
+	}
+];
+
+describe('loadAllStores', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		// Reset environment variable
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should load all stores from JSON files', async () => {
+		mockReaddir.mockResolvedValue([
+			'Antwerpen_Antwerpen.json',
+			'Bruxelles_Bruxelles.json',
+			'other.txt'
+		] as any);
+
+		mockReadFile
+			.mockResolvedValueOnce(JSON.stringify(mockStoreData1))
+			.mockResolvedValueOnce(JSON.stringify(mockStoreData2));
+
+		const stores = await loadAllStores();
+
+		expect(stores).toHaveLength(3);
+		expect(mockReaddir).toHaveBeenCalledWith('data/stores');
+		expect(mockReadFile).toHaveBeenCalledTimes(2);
+	});
+
+	it('should add slug to each store', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await loadAllStores();
+
+		expect(stores[0].slug).toBe('kringwinkel-antwerpen-antwerpen');
+		expect(stores[1].slug).toBe('oxfam-solidariteit-antwerpen');
+	});
+
+	it('should only load .json files', async () => {
+		mockReaddir.mockResolvedValue([
+			'file1.json',
+			'file2.txt',
+			'file3.json',
+			'README.md'
+		] as any);
+
+		mockReadFile
+			.mockResolvedValueOnce(JSON.stringify(mockStoreData1))
+			.mockResolvedValueOnce(JSON.stringify(mockStoreData2));
+
+		await loadAllStores();
+
+		// Should only read the .json files
+		expect(mockReadFile).toHaveBeenCalledTimes(2);
+	});
+
+	it('should handle diacritics in store names and cities', async () => {
+		mockReaddir.mockResolvedValue(['liege.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreDataWithDiacritics));
+
+		const stores = await loadAllStores();
+
+		expect(stores[0].slug).toBe('armee-du-salut-liege');
+		expect(stores[0].name).toBe('Armée du Salut');
+	});
+
+	it('should limit files in dev mode', async () => {
+		process.env.BUILD_DEV = 'true';
+
+		mockReaddir.mockResolvedValue([
+			'file1.json',
+			'file2.json',
+			'file3.json',
+			'file4.json',
+			'file5.json',
+			'file6.json',
+			'file7.json'
+		] as any);
+
+		mockReadFile.mockResolvedValue(JSON.stringify([]));
+
+		await loadAllStores();
+
+		// Should only read first 5 files in dev mode
+		expect(mockReadFile).toHaveBeenCalledTimes(5);
+	});
+
+	it('should handle empty JSON files', async () => {
+		mockReaddir.mockResolvedValue(['empty.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify([]));
+
+		const stores = await loadAllStores();
+
+		expect(stores).toEqual([]);
+	});
+
+	it('should handle multiple stores in one file', async () => {
+		mockReaddir.mockResolvedValue(['multi.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await loadAllStores();
+
+		expect(stores).toHaveLength(2);
+	});
+});
+
+describe('loadDirectoryData', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should build complete directory structure', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const data = await loadDirectoryData();
+
+		expect(data.stores).toHaveLength(3);
+		expect(data.provinces).toBeDefined();
+		expect(data.cities).toBeDefined();
+		expect(data.categories).toBeDefined();
+		expect(data.storesByProvince).toBeInstanceOf(Map);
+		expect(data.storesByCity).toBeInstanceOf(Map);
+	});
+
+	it('should group stores by province correctly', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const data = await loadDirectoryData();
+
+		expect(data.storesByProvince.get('antwerpen')).toHaveLength(2);
+		expect(data.storesByProvince.get('bruxelles-capitale')).toHaveLength(1);
+	});
+
+	it('should group stores by city correctly', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const data = await loadDirectoryData();
+
+		expect(data.storesByCity.get('antwerpen/antwerpen')).toHaveLength(2);
+		expect(data.storesByCity.get('bruxelles-capitale/bruxelles')).toHaveLength(1);
+	});
+
+	it('should build provinces list with correct data', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const data = await loadDirectoryData();
+
+		const antwerpen = data.provinces.find((p) => p.slug === 'antwerpen');
+		expect(antwerpen).toBeDefined();
+		expect(antwerpen?.name).toBe('Antwerpen');
+		expect(antwerpen?.storeCount).toBe(2);
+		expect(antwerpen?.cities).toContain('Antwerpen');
+	});
+
+	it('should build cities list with correct data', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const data = await loadDirectoryData();
+
+		const antwerpenCity = data.cities.find((c) => c.slug === 'antwerpen');
+		expect(antwerpenCity).toBeDefined();
+		expect(antwerpenCity?.name).toBe('Antwerpen');
+		expect(antwerpenCity?.province).toBe('Antwerpen');
+		expect(antwerpenCity?.storeCount).toBe(2);
+	});
+
+	it('should sort provinces alphabetically', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData2, ...mockStoreData1]) // Reverse order
+		);
+
+		const data = await loadDirectoryData();
+
+		expect(data.provinces[0].name).toBe('Antwerpen');
+		expect(data.provinces[1].name).toBe('Bruxelles-Capitale');
+	});
+
+	it('should sort cities alphabetically', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([
+				...mockStoreData2,
+				...mockStoreData1,
+				...mockStoreDataWithDiacritics
+			])
+		);
+
+		const data = await loadDirectoryData();
+
+		// Should be sorted alphabetically
+		const cityNames = data.cities.map((c) => c.name);
+		const sortedCityNames = [...cityNames].sort((a, b) => a.localeCompare(b));
+		expect(cityNames).toEqual(sortedCityNames);
+	});
+
+	it('should only include categories with stores', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const data = await loadDirectoryData();
+
+		// All categories should have storeCount > 0
+		data.categories.forEach((category) => {
+			expect(category.storeCount).toBeGreaterThan(0);
+		});
+	});
+});
+
+describe('Performance and Caching', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should call file system for each loadDirectoryData call (NO CACHING)', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		// Call loadDirectoryData multiple times
+		await loadDirectoryData();
+		await loadDirectoryData();
+		await loadDirectoryData();
+
+		// File system should be called 3 times (once per call) - NO CACHING!
+		expect(mockReaddir).toHaveBeenCalledTimes(3);
+		expect(mockReadFile).toHaveBeenCalledTimes(3);
+	});
+
+	it('should reload data when getProvinces is called multiple times', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		await getProvinces();
+		await getProvinces();
+
+		// Data should be loaded twice (performance issue!)
+		expect(mockReaddir).toHaveBeenCalledTimes(2);
+		expect(mockReadFile).toHaveBeenCalledTimes(2);
+	});
+});
+
+describe('getStoreBySlug', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should find store by slug', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const store = await getStoreBySlug('kringwinkel-antwerpen-antwerpen');
+
+		expect(store).toBeDefined();
+		expect(store?.name).toBe('Kringwinkel Antwerpen');
+	});
+
+	it('should return undefined for non-existent slug', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const store = await getStoreBySlug('non-existent-slug');
+
+		expect(store).toBeUndefined();
+	});
+
+	it('should handle slugs with diacritics', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreDataWithDiacritics));
+
+		const store = await getStoreBySlug('armee-du-salut-liege');
+
+		expect(store).toBeDefined();
+		expect(store?.name).toBe('Armée du Salut');
+	});
+});
+
+describe('getStoresByProvince', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should return stores for a province', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([...mockStoreData1, ...mockStoreData2])
+		);
+
+		const stores = await getStoresByProvince('antwerpen');
+
+		expect(stores).toHaveLength(2);
+		expect(stores.every((s) => s.province === 'Antwerpen')).toBe(true);
+	});
+
+	it('should return empty array for non-existent province', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await getStoresByProvince('non-existent');
+
+		expect(stores).toEqual([]);
+	});
+
+	it('should handle province slugs with diacritics', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreDataWithDiacritics));
+
+		const stores = await getStoresByProvince('liege');
+
+		expect(stores).toHaveLength(1);
+	});
+});
+
+describe('getStoresByCity', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should return stores for a city', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await getStoresByCity('antwerpen', 'antwerpen');
+
+		expect(stores).toHaveLength(2);
+		expect(stores.every((s) => s.city === 'Antwerpen')).toBe(true);
+	});
+
+	it('should return empty array for non-existent city', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await getStoresByCity('antwerpen', 'non-existent');
+
+		expect(stores).toEqual([]);
+	});
+});
+
+describe('getCitiesForProvince', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should return cities for a province', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(
+			JSON.stringify([
+				...mockStoreData1,
+				{
+					...mockStoreData1[0],
+					city: 'Gent'
+				}
+			])
+		);
+
+		const cities = await getCitiesForProvince('antwerpen');
+
+		expect(cities.length).toBeGreaterThan(0);
+		expect(cities.every((c) => c.provinceSlug === 'antwerpen')).toBe(true);
+	});
+
+	it('should return empty array for non-existent province', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const cities = await getCitiesForProvince('non-existent');
+
+		expect(cities).toEqual([]);
+	});
+});
+
+describe('getCategories', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should return all categories with stores', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const categories = await getCategories();
+
+		expect(Array.isArray(categories)).toBe(true);
+		categories.forEach((cat) => {
+			expect(cat.slug).toBeDefined();
+			expect(cat.nameNL).toBeDefined();
+			expect(cat.storeCount).toBeGreaterThan(0);
+		});
+	});
+});
+
+describe('Category filtering functions', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should filter stores by category', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const categories = await getCategories();
+		if (categories.length > 0) {
+			const categorySlug = categories[0].slug;
+			const stores = await getStoresByCategory(categorySlug);
+
+			expect(Array.isArray(stores)).toBe(true);
+		}
+	});
+
+	it('should filter stores by category and province', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const categories = await getCategories();
+		if (categories.length > 0) {
+			const categorySlug = categories[0].slug;
+			const stores = await getStoresByCategoryAndProvince(categorySlug, 'antwerpen');
+
+			expect(Array.isArray(stores)).toBe(true);
+		}
+	});
+
+	it('should filter stores by category and city', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const categories = await getCategories();
+		if (categories.length > 0) {
+			const categorySlug = categories[0].slug;
+			const stores = await getStoresByCategoryAndCity(
+				categorySlug,
+				'antwerpen',
+				'antwerpen'
+			);
+
+			expect(Array.isArray(stores)).toBe(true);
+		}
+	});
+
+	it('should return empty array for non-existent category', async () => {
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify(mockStoreData1));
+
+		const stores = await getStoresByCategory('non-existent-category');
+
+		expect(stores).toEqual([]);
+	});
+});
+
+describe('Edge cases and error handling', () => {
+	beforeEach(() => {
+		vi.clearAllMocks();
+		delete process.env.BUILD_DEV;
+	});
+
+	it('should handle stores with missing optional fields', async () => {
+		const incompleteStore = {
+			name: 'Test Store',
+			city: 'Test City',
+			province: 'Test Province',
+			address: 'Test Address',
+			category: 'General'
+			// Missing phone, website, stars, review_count
+		};
+
+		mockReaddir.mockResolvedValue(['test.json'] as any);
+		mockReadFile.mockResolvedValue(JSON.stringify([incompleteStore]));
+
+		const stores = await loadAllStores();
+
+		expect(stores).toHaveLength(1);
+		expect(stores[0].name).toBe('Test Store');
+	});
+
+	it('should handle empty data directory gracefully', async () => {
+		mockReaddir.mockResolvedValue([] as any);
+
+		const stores = await loadAllStores();
+
+		expect(stores).toEqual([]);
+	});
+});
