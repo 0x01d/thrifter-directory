@@ -2,8 +2,14 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import { locales, getLocale, localizeHref } from '$lib/paraglide/runtime.js';
 	import { page } from '$app/stores';
+	import { stripLocalePrefix } from '$lib/utils/i18n-helpers';
 
 	let mobileMenuOpen = $state(false);
+
+	// Get canonical (non-localized) path for language switching
+	// This prevents accumulating language prefixes like /fr/fr/fr when
+	// clicking language buttons multiple times
+	$: canonicalPath = stripLocalePrefix($page.url.pathname, getLocale());
 
 	// Language display names
 	const languageNames: Record<string, string> = {
@@ -71,7 +77,7 @@
 				<span class="lang-label">Language:</span>
 				{#each locales as locale}
 					<a
-						href={localizeHref($page.url.pathname, {locale} )}
+						href={localizeHref(canonicalPath, {locale} )}
 						class="lang-link"
 						class:active={locale === getLocale()}
 						onclick={closeMobileMenu}
