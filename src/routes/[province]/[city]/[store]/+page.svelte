@@ -5,6 +5,7 @@
 	import SEOTags from '$lib/components/SEOTags.svelte';
 	import BreadcrumbSchema from '$lib/components/BreadcrumbSchema.svelte';
 	import LocalBusinessSchema from '$lib/components/LocalBusinessSchema.svelte';
+	import { validateWebsiteUrl } from '$lib/utils/sanitize';
 
 	let { data }: { data: PageData } = $props();
 	const { store, provinceSlug, citySlug } = data;
@@ -14,6 +15,9 @@
 	const currentUrl = `${baseUrl}${localizeHref(`/${provinceSlug}/${citySlug}/${store.slug}`, locale)}`;
 	const pageTitle = `${store.name} - ${store.city}, ${store.province} - Thrifter.be`;
 	const pageDescription = store.description || `${store.category} in ${store.city}, ${store.province}. ${store.address}`;
+
+	// Validate website URL to prevent XSS
+	const safeWebsiteUrl = validateWebsiteUrl(store.website);
 </script>
 
 <svelte:head>
@@ -74,12 +78,12 @@
 					</div>
 				{/if}
 
-				{#if store.website}
+				{#if safeWebsiteUrl}
 					<div class="info-item">
 						<strong>🌐 {m.website()}</strong>
 						<p>
 							<a
-								href="https://{store.website}"
+								href={safeWebsiteUrl}
 								target="_blank"
 								rel="noopener noreferrer">{store.website}</a
 							>

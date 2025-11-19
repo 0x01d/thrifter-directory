@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { safeJsonLdSerialize } from '$lib/utils/sanitize';
+
 	interface BreadcrumbItem {
 		name: string;
 		url: string;
@@ -23,5 +25,5 @@
 </script>
 
 <svelte:head>
-	{@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+	{@html `<script type="application/ld+json">${safeJsonLdSerialize(schema)}</script>`}
 </svelte:head>

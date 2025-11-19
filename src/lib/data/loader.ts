@@ -15,6 +15,16 @@ const DATA_DIR = 'data/stores';
 const DEV_FILE_LIMIT = 5;
 
 /**
+ * Module-level cache for directory data
+ * This prevents the N+1 performance problem where loadDirectoryData()
+ * was being called hundreds of times during SSG build, re-reading
+ * all 92 JSON files each time.
+ *
+ * Cache is cleared in dev mode to allow hot reloading.
+ */
+let directoryDataCache: DirectoryData | null = null;
+
+/**
  * Load all thrift stores from JSON files
  */
 export async function loadAllStores(): Promise<ThriftStoreWithSlug[]> {
@@ -45,9 +55,33 @@ export async function loadAllStores(): Promise<ThriftStoreWithSlug[]> {
 }
 
 /**
+ * Clear the directory data cache
+ * Useful for development mode to enable hot reloading
+ */
+export function clearDirectoryCache(): void {
+	directoryDataCache = null;
+}
+
+/**
  * Build complete directory data structure
+ *
+ * PERFORMANCE: This function is cached at the module level to prevent
+ * re-loading all 92 JSON files on every route during SSG build.
+ * Before caching, this was called hundreds of times, causing severe
+ * performance degradation.
+ *
+ * In development mode (BUILD_DEV=true), caching is disabled to allow
+ * hot reloading of data changes.
  */
 export async function loadDirectoryData(): Promise<DirectoryData> {
+	// Skip cache in dev mode to allow hot reloading
+	const isDevMode = process.env.BUILD_DEV === 'true';
+
+	// Return cached data if available (production builds only)
+	if (!isDevMode && directoryDataCache !== null) {
+		return directoryDataCache;
+	}
+
 	const stores = await loadAllStores();
 
 	// Group stores by province
@@ -154,7 +188,8 @@ export async function loadDirectoryData(): Promise<DirectoryData> {
 		storeCount: storesByCategory.get(config.slug)?.length || 0
 	}));
 
-	return {
+	// Build the final data structure
+	const data: DirectoryData = {
 		stores,
 		provinces: provinces.sort((a, b) => a.name.localeCompare(b.name)),
 		cities: cities.sort((a, b) => a.name.localeCompare(b.name)),
@@ -165,6 +200,14 @@ export async function loadDirectoryData(): Promise<DirectoryData> {
 		storesByCategoryAndProvince,
 		storesByCategoryAndCity
 	};
+
+	// Cache the result to prevent re-loading on subsequent calls
+	// (only in production mode to allow hot reloading in dev)
+	if (!isDevMode) {
+		directoryDataCache = data;
+	}
+
+	return data;
 }
 
 /**

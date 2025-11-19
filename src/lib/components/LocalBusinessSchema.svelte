@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ThriftStoreWithSlug } from '$lib/types/thrift-store';
+	import { safeJsonLdSerialize } from '$lib/utils/sanitize';
 
 	interface Props {
 		store: ThriftStoreWithSlug;
@@ -39,5 +40,5 @@
 </script>
 
 <svelte:head>
-	{@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+	{@html `<script type="application/ld+json">${safeJsonLdSerialize(schema)}</script>`}
 </svelte:head>
